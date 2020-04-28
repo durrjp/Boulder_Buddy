@@ -51,7 +51,7 @@ export const BouldersProvider = (props) => {
 
     return (
         <BouldersContext.Provider value={{
-            sessions, addBoulder, deleteBoulder, updateBoulder
+            boulders, addBoulder, deleteBoulder, updateBoulder
         }}>
             {props.children}
         </BouldersContext.Provider>

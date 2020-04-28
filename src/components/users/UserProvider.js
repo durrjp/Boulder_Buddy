@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
 
-export const UsersContext = React.createContext()
+export const UserContext = React.createContext()
 
-export const UsersProvider = (props) => {
+export const UserProvider = (props) => {
     const [users, setUsers] = useState([])
 
 
@@ -32,10 +32,10 @@ export const UsersProvider = (props) => {
     }, [users])
 
     return (
-        <UsersContext.Provider value={{
+        <UserContext.Provider value={{
             users, addUser
         }}>
             {props.children}
-        </UsersContext.Provider>
+        </UserContext.Provider>
     )
 }
