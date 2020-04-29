@@ -9,13 +9,14 @@ const Register = props => {
     const verifyPassword = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
+                    return false
+                } else {
                     return true
                 }
-                return false
             })
     }
 
@@ -23,8 +24,9 @@ const Register = props => {
         e.preventDefault()
 
         if (password.current.value === verifyPassword.current.value) {
-            existingUserCheck()
-                .then(() => {
+                existingUserCheck()
+                .then((result) => {
+                    if (result) {
                     fetch("http://localhost:8088/users", {
                         method: "POST",
                         headers: {
@@ -43,6 +45,9 @@ const Register = props => {
                                 props.history.push("/")
                             }
                         })
+                    } else {
+                        window.alert("This email is already in use")
+                    }
                 })
         } else {
             window.alert("Passwords do not match")

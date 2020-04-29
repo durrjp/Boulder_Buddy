@@ -3,6 +3,7 @@ import HomeRender from "./home/HomeRender"
 import NewSessionRender from "./newSessions/NewSessionRender"
 import { UserProvider } from "./users/UserProvider"
 import { DataStore } from "./DataStore"
+import { SessionsProvider } from "./mySessions/SessionProvider"
 
 
 export default (props) => {
@@ -17,7 +18,9 @@ export default (props) => {
     )
 
     const showNewSession = () => (
-        <NewSessionRender />
+        <SessionsProvider>
+            <NewSessionRender />
+        </SessionsProvider>
     )
 
     const showMySessions = () => (

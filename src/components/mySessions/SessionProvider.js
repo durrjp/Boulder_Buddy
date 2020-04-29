@@ -4,6 +4,7 @@ export const SessionsContext = React.createContext()
 
 export const SessionsProvider = (props) => {
     const [sessions, setSessions] = useState([])
+    const [currentSession, setCurrentSession] = useState({})
 
 
     const getSessions = () => {
@@ -11,6 +12,7 @@ export const SessionsProvider = (props) => {
             .then(res => res.json())
             .then(setSessions)
     }
+
 
     const addSession = session => {
         return fetch("http://localhost:8088/sessions", {
@@ -20,7 +22,12 @@ export const SessionsProvider = (props) => {
             },
             body: JSON.stringify(session)
         })
-            .then(getSessions)
+            .then(res => res.json())
+            .then((res) => {
+                const createdObj = res
+                getSessions()
+                return createdObj
+            })
     }
 
     const updateSession = session => {
@@ -47,11 +54,12 @@ export const SessionsProvider = (props) => {
 
     useEffect(() => {
         // console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
-    }, [sessions])
+    }, [sessions, currentSession])
 
     return (
         <SessionsContext.Provider value={{
-            sessions, addSession, deleteSession, updateSession
+            sessions, addSession, deleteSession, updateSession,
+            currentSession, setCurrentSession
         }}>
             {props.children}
         </SessionsContext.Provider>
