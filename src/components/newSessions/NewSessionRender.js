@@ -1,9 +1,10 @@
 import React, { useRef, useContext, useState } from "react"
-import { Modal, ModalHeader, ModalBody } from "reactstrap"
+import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
 import NewSessionForm from "../newSessions/NewSessionForm"
 import CurrentSessionBoulder from "./CurrentSessionBoulder"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
+import NewBoulderButton from "./NewBoulderButton"
 
 
 export default (props) => {
@@ -19,7 +20,7 @@ export default (props) => {
     const send = useRef("")
     const constructBoulder = (grade) => {
         let sentBool=false
-        if (send.current.value === "on") {
+        if (send.current.checked === true) {
             sentBool=true
         }
         const boulderObject = {
@@ -31,6 +32,7 @@ export default (props) => {
         addBoulder(boulderObject)
     }
     const currentSessionBoulders = boulders.filter(boulder => boulder.sessionId === currentSession.id) || []
+    const arrayOfGrades = [0,1,2,3,4,5,6,7,8,9]
     return (
         <>
         <div>Session # {currentSession.id}</div>
@@ -44,6 +46,7 @@ export default (props) => {
                 autoFocus
                 className="form-control"
                 placeholder="1"
+                defaultValue="1"
             />
             <label htmlFor="sentCheckbox">Sent: </label>
             <input
@@ -55,23 +58,23 @@ export default (props) => {
                 className="form-control"
                 placeholder=""
             />
-            <button type="submit"
-                id="0"
-                onClick={
-                    evt => {
-                        evt.preventDefault()
-                        constructBoulder(0)
-                    }
-                }
-                className="btn v0">
-                V0
-            </button>
+            {
+                arrayOfGrades.map(grades => <NewBoulderButton constructBoulder={constructBoulder} grade={grades}/>)
+            }
         </form>
         <div className="newSessionLog">
             <h2>Log</h2>
-        {
-            currentSessionBoulders.map(boulder => <CurrentSessionBoulder boulder={boulder}/>)
-        }
+            <div className="newSessionLog_boulders">
+            {
+                currentSessionBoulders.map(boulder => <CurrentSessionBoulder boulder={boulder}/>)
+            }
+            </div>
+        </div>
+        <div className="submitSession">
+            <Button onClick={(evt) =>{
+                evt.preventDefault()
+                props.setActiveList("mySessions")
+            }}>Save Session</Button>
         </div>
         <Modal isOpen={modal} toggle={toggle}>
             <ModalHeader toggle={toggle}>

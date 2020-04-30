@@ -33,6 +33,10 @@ export default (props) => {
                         autoFocus
                         className="form-control"
                         placeholder="session date"
+                        defaultValue=
+                        {
+                            Date.now()
+                        }
                     />
                 </div>
             </fieldset>
@@ -46,7 +50,6 @@ export default (props) => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="session location"
                     />
                 </div>
             </fieldset>

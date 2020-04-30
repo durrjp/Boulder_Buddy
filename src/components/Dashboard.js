@@ -4,6 +4,8 @@ import NewSessionRender from "./newSessions/NewSessionRender"
 import { UserProvider } from "./users/UserProvider"
 import { DataStore } from "./DataStore"
 import { SessionsProvider } from "./mySessions/SessionProvider"
+import { BouldersProvider } from "./boulders/BoulderProvider"
+import MySessionsRender from "./mySessions/MySessionsRender"
 
 
 export default (props) => {
@@ -19,13 +21,16 @@ export default (props) => {
 
     const showNewSession = () => (
         <SessionsProvider>
-            <NewSessionRender />
+            <NewSessionRender setActiveList={setActiveList}/>
         </SessionsProvider>
     )
 
     const showMySessions = () => (
-        <>
-        </>
+        <SessionsProvider>
+            <BouldersProvider>
+                <MySessionsRender/>
+            </BouldersProvider>
+        </SessionsProvider>
     )
 
     const showSocialize = () => (

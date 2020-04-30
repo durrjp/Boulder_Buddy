@@ -1,0 +1,22 @@
+
+body {
+    background-color: rgb(0, 0, 0) !important
+}
+
+.App {
+    height: 736px;
+    width: 414px;
+    background-color: #EDE6E6;
+    margin: 40px auto 100px
+
+}
+
+/* .modal {
+    position: fixed;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  outline: 0;
+} */
