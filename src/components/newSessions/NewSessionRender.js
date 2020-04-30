@@ -35,7 +35,7 @@ export default (props) => {
     const arrayOfGrades = [0,1,2,3,4,5,6,7,8,9]
     return (
         <>
-        <div>Session # {currentSession.id}</div>
+        <h3>Session # {currentSession.id}</h3>
         <form>
             <label htmlFor="numberOfAttempts">Number of Attempts: </label>
             <input

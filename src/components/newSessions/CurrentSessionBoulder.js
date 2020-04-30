@@ -6,8 +6,8 @@ import { BouldersContext } from "../boulders/BoulderProvider"
 
 
 export default (props) => {
-    const [modal, setModal] = useState(false)
     const { deleteBoulder } = useContext(BouldersContext)
+    const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
     let sended = ""
@@ -18,13 +18,10 @@ export default (props) => {
     }
     return (
     <>
-        <div className="singleBoulderLog">
-            <div className="currentBoulder">
-                <div>V{props.boulder.grade}</div>
-                <div>Attempts: {props.boulder.attempts}</div>
-                <div>{sended}</div>
-            </div>
-        </div>
+        <div className="singleBoulder">
+        <div>V{props.boulder.grade}</div>
+        <div>Attempts: {props.boulder.attempts}</div>
+        <div>{sended}</div>
         <Button onClick={(e) => {
             e.preventDefault()
             toggle()
@@ -34,6 +31,7 @@ export default (props) => {
             deleteBoulder(props.boulder.id)
 
         }}>X</Button>
+        </div>
         <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
                     Edit Boulder

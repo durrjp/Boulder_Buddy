@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useState, useEffect} from "react"
 import { BouldersContext } from "../boulders/BoulderProvider"
 
 
@@ -7,6 +7,16 @@ export default ({boulder, toggle}) => {
     const { updateBoulder } = useContext(BouldersContext)
 
     const [updatedBoulder, setBoulder] = useState(boulder)
+    const [sent, setSent] = useState()
+
+    useEffect(()=> {
+        setSent(boulder.sent)
+    },[])
+
+    useEffect(()=> {
+        setSent(updatedBoulder.sent)
+    },[updatedBoulder])
+
 
     const handleControlledInputChange = (event) => {
         if (event.target.name === "sent") {
@@ -32,8 +42,7 @@ export default ({boulder, toggle}) => {
     }
     return (
     <>
-        <form className="animalForm">
-        
+        <form className="editBoulderForm">
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="Grade">Grade: </label>
@@ -76,7 +85,7 @@ export default ({boulder, toggle}) => {
                         autoFocus
                         className="form-control"
                         placeholder=""
-                        deafultValue = {false}
+                        checked = {sent}
                         onChange={handleControlledInputChange}
                     />
                 </div>
