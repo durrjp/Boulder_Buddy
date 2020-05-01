@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import {Link} from "react-router-dom"
 import HomeRender from "./home/HomeRender"
 import NewSessionRender from "./newSessions/NewSessionRender"
 import { UserProvider } from "./users/UserProvider"
@@ -6,12 +7,23 @@ import { DataStore } from "./DataStore"
 import { SessionsProvider } from "./mySessions/SessionProvider"
 import { BouldersProvider } from "./boulders/BoulderProvider"
 import MySessionsRender from "./mySessions/MySessionsRender"
+import TopNav from "./header/TopNav"
+import LeftNav from "./header/LeftNav"
+import "./BoulderBuddy.css"
+import "./header/Header.css"
 
 
-export default (props) => {
+
+
+const Dashboard = (props) => {
     const [activeList, setActiveList] = useState("home")
     const [components, setComponents] = useState()
+    
 
+    const [showLeftNav, setShowLeftNav] = useState(false)
+    const toggleNav = () => {
+        setShowLeftNav(!showLeftNav)
+    }
 
     const showHome = () => (
         <UserProvider>
@@ -65,8 +77,18 @@ export default (props) => {
         <>
             <div className="mainContainer">
             <DataStore>
-                <div className="headerContainer"></div>
+                <div className="headerContainer">
+                    <TopNav toggleNav={toggleNav} />
+                    <Link className="logoutLink"
+                        onClick={e => {
+                            e.preventDefault()
+                            localStorage.removeItem("boulderbuddy_user")
+                            props.history.push("/")
+                        }}
+                    >Logout</Link>
+                </div>
                 <div className="renderComponents">
+                    <LeftNav toggleNav={toggleNav} showLeftNav={showLeftNav} setActiveList={setActiveList} />
                     {components}
                 </div>
             </DataStore>
@@ -75,5 +97,4 @@ export default (props) => {
     )
 }
 
-
-
+export default Dashboard

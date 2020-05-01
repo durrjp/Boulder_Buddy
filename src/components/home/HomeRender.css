@@ -1,0 +1,57 @@
+.homeDivsContainer {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.homeRow1 {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.homeRow2 {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.homeItem {
+    width: 179px;
+    height: 228px;
+    left: 216px;
+    top: 101px;
+    background: rgba(107, 52, 17, 0.2);
+    border-radius: 7px;
+    margin-top: 1em;
+    text-align: center;
+    padding-top: 45px;
+}
+
+.homeItem:hover {
+    background-color: #FD8D6E ;
+}
+
+.homeHeader {
+    text-align: center;
+    font-weight: bold;
+}
+
+.home_icon {
+    width: 69px;
+    height: 69px;
+    fill: #6B3411
+}
+
+.homeItem_header {
+    font-size: 30px;
+    color: #6B3411
+}
+
+.imageLogo {
+    width: 228px;
+    height: 125px;
+}
+
+.logoContainer {
+    text-align: center;
+}

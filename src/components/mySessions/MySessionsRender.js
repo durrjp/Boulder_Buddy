@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { SessionsContext } from "./SessionProvider"
-import MySessions_Session from "./MySessions_Session"
+import MySessionsSession from "./MySessionsSession"
+import "./MySessions.css"
 
 export default () => {
     const {sessions} = useContext(SessionsContext)
@@ -8,10 +9,12 @@ export default () => {
     const currUserSessions = sessions.filter(session => session.userId === currentUserId)
     return (
     <>
+    <div className="mySessions">
         <h3>My Sessions</h3>
         {
-            currUserSessions.map(cus => <MySessions_Session session={cus} />)
+            currUserSessions.map(cus => <MySessionsSession session={cus} />)
         }
+    </div>
     </>
     )
 }

@@ -1,6 +1,8 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Login.css"
+import loginLogo from "./images/BoulderBuddyLogo.png"
+
 
 
 const Login = props => {
@@ -54,33 +56,35 @@ const Login = props => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Boulder Buddy</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email"
-                            id="email"
-                            className="form-control"
-                            placeholder="Email address"
-                            required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password"
-                            id="password"
-                            className="form-control"
-                            placeholder="Password"
-                            required />
-                    </fieldset>
-                    <fieldset>
-                        <button type="submit">
-                            Sign in
-                    </button>
-                    </fieldset>
+                    <div className="loginLogoContainer">
+                        <img className="loginLogo" src={loginLogo}/>
+                    </div>
+                    <div className="loginInfoContainer">
+                        <fieldset>
+                            <input ref={email} type="email"
+                                id="email"
+                                className="form-control"
+                                placeholder="Email address"
+                                required autoFocus />
+                        </fieldset>
+                        <fieldset>
+                            <input ref={password} type="password"
+                                id="password"
+                                className="form-control"
+                                placeholder="Password"
+                                required />
+                        </fieldset>
+                        <br></br>
+                        <fieldset>
+                            <button class="signInButton"type="submit">
+                                Sign in
+                            </button>
+                        </fieldset>
+                    </div>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                Not a member? <Link to="/register">Register Here</Link>
             </section>
         </main>
     )

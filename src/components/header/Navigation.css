@@ -1,0 +1,31 @@
+.topNav {
+    flex-basis: 100%;
+    display: flex;
+    color: white;
+    height: 7vh;
+}
+
+.leftNav {
+    position: absolute;
+    height: auto;
+    width: 15%;
+}
+
+.menuButtonContainer {
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 0;
+}
+
+.nav__dashboard {
+    margin: 5vh 0;
+    padding: 2vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+

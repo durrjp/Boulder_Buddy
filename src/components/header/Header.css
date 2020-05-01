@@ -1,0 +1,9 @@
+.headerContainer {
+    display:flex;
+    flex-flow: row nowrap;
+    padding: .5em;
+}
+
+.logoutLink {
+    color: #FD8D6E
+}

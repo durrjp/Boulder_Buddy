@@ -1,6 +1,7 @@
 
 body {
-    background-color: rgb(0, 0, 0) !important
+    background-image: linear-gradient(to bottom right, rgb(10, 10, 10), rgb(2, 2, 2)) !important;
+    overflow-y: hidden;
 }
 
 .App {
@@ -8,11 +9,32 @@ body {
     width: 414px;
     background-color: #EDE6E6;
     margin: 40px auto 100px;
-    overflow-y: auto;
 }
+
+.mainContainer {
+    height: 736px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.mainContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+.headerFont {
+    font-family: 'Teko', sans-serif;
+    font-size: 36px
+}
+
 
 .singleBoulder {
     width: 100vw;
     display: flex;
     flex-flow: row nowrap;
 }
+
+.renderComponents {
+    top: 50px
+}
+
+
