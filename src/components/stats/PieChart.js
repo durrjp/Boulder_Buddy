@@ -27,10 +27,14 @@ export default ({pieGrade, userBoulders}) => {
 
     }
     const pieData = Object.values(pieGradeData)
+    let pieDataRounded = []
+    pieData.map(item => {
+        pieDataRounded.push(Math.floor(parseInt(item)))
+    })
 
     let state = {
         data: {
-            labels: ["% Incomplete", "% Complete", "% Flashed"],
+            labels: ["Incomplete %", "Complete %", "Flashed %"],
             datasets: [
                 {
                     label: "Attempts",
@@ -39,7 +43,7 @@ export default ({pieGrade, userBoulders}) => {
                     barThickness: 'flex',
                     maxBarThickness: 20,
                     minBarLength: 2,
-                    data: pieData
+                    data: pieDataRounded
                 }
             ],
         }

@@ -57,7 +57,7 @@ const Login = props => {
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <div className="loginLogoContainer">
-                        <img className="loginLogo" src={loginLogo}/>
+                        <img className="loginLogo" src={loginLogo} alt="Logo"/>
                     </div>
                     <div className="loginInfoContainer">
                         <fieldset>
