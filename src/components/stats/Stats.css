@@ -30,14 +30,18 @@
 }
 
 .barGraphContainer {
-    padding: 1em;
     background-color: white;
     margin: 1em;
     border-radius: 7px;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .pieChartContainer {
     background-color: white;
     margin: 1em;
     border-radius: 7px;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
