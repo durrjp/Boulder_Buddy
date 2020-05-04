@@ -22,7 +22,6 @@ body {
   }
 
 .headerFont {
-    font-family: 'Teko', sans-serif;
     font-size: 36px
 }
 
@@ -34,7 +33,7 @@ body {
 }
 
 .renderComponents {
-    top: 50px
+    margin-top: 60px
 }
 
 

@@ -28,12 +28,37 @@
 }
 
 .homeItem:hover {
-    background-color: #FD8D6E ;
+    background-color: rgb(247, 183, 166) ;
+}
+
+.fading {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: fading;
+    animation-duration: .5s;
+    animation-name: fading;
+}
+@-webkit-keyframes fading {
+    from {
+        color: blue;
+    }
+    to {
+        color: black;
+    }
+}
+@keyframes fading {
+    from {
+        color: blue;
+    }
+    to {
+        color: black;
+    }
 }
 
 .homeHeader {
     text-align: center;
     font-weight: bold;
+    color: rgb(0, 0, 0,.75);
+    
 }
 
 .home_icon {

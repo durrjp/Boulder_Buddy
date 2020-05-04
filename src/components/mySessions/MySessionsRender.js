@@ -7,12 +7,14 @@ export default () => {
     const {sessions} = useContext(SessionsContext)
     const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
     const currUserSessions = sessions.filter(session => session.userId === currentUserId)
+    const sortedUserSessions = currUserSessions.sort((a,b) => new Date(b.date) - new Date(a.date))
+
     return (
     <>
     <div className="mySessions">
-        <h3>My Sessions</h3>
+        <div className="mySessionsHeader">My Sessions</div>
         {
-            currUserSessions.map(cus => <MySessionsSession session={cus} />)
+            sortedUserSessions.map(cus => <MySessionsSession session={cus} />)
         }
     </div>
     </>

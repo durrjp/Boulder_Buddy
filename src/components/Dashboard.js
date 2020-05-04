@@ -11,6 +11,7 @@ import TopNav from "./header/TopNav"
 import LeftNav from "./header/LeftNav"
 import "./BoulderBuddy.css"
 import "./header/Header.css"
+import StatsRender from "./stats/StatsRender"
 
 
 
@@ -51,8 +52,14 @@ const Dashboard = (props) => {
     )
 
     const showStats = () => (
-        <>
-        </>
+        <UserProvider>
+            <SessionsProvider>
+                <BouldersProvider>
+                    <StatsRender/>
+                </BouldersProvider>
+            </SessionsProvider>
+        </UserProvider>
+
     )
 
     useEffect(() => {

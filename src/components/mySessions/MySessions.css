@@ -1,2 +1,76 @@
-.mySessions {
+.sessionBoulders {
+    text-align: center;
+}
+
+.sessionContainer {
+    margin-bottom: 25px;
+    padding: 10px;
+    text-align: center;
+    background: rgb(255, 255, 255,.5);
+    border-radius: 7px;
+    margin: 20px
+}
+
+.mySessionsHeader {
+    font-size: 42px;
+    text-align: center;
+    color: rgb(0, 0, 0,.75);
+    font-weight: bold;
+}
+
+.sessionDate {
+    font-size: 24px;
+    margin-bottom: 5px;
+    width: auto
+
+}
+
+.sessionLocation {
+    color: #FD8D6E
+}
+
+
+.singleBoulder {
+    width: 100%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-around;
+    margin-bottom: 5px;
+}
+
+.boulderItem1 {
+    width: 20px
+}
+
+.boulderItem2 {
+    width: 80px
+}
+
+.boulderItem3 {
+    width: 80px;
+    font-weight: bold;
+}
+
+.boulderItem4 {
+    width: 20px
+}
+
+.editButton {
+    border: none;
+    background: rgba(107, 52, 17, 0.2);
+    border-radius: 7px;
+}
+
+.editButton:hover {
+    background-color: rgb(247, 183, 166) ;
+}
+
+.deleteButton {
+    border:none;
+    background: rgba(107, 52, 17, 0.2);
+    border-radius: 7px; 
+}
+
+.deleteButton:hover {
+    background-color: rgb(247, 183, 166) ;
 }

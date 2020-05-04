@@ -16,7 +16,8 @@
   }
   
   .toggle-button__line {
-    width: 35px;
+    width: 30px;
     height: 4px;
     background: black;
+    transition: .5s
   }

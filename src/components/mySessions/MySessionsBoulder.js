@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react"
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap"
+import { Modal, ModalHeader, ModalBody } from "reactstrap"
 import EditCurrentBoulderForm from "../newSessions/EditCurrentBoulderForm"
 import { BouldersContext } from "../boulders/BoulderProvider"
+import "./MySessions.css"
+
 
 export default ({boulder}) => {
     const { deleteBoulder } = useContext(BouldersContext)
@@ -17,18 +19,22 @@ export default ({boulder}) => {
         <>
         <div className="singleBoulder">
             
-            <div>V{boulder.grade}</div>
-            <div>Attempts: {boulder.attempts}</div>
-            <div>{sended}</div>
-            <Button onClick={(e) => {
+            <div className="boulderItem1">V{boulder.grade}</div>
+            <div className="boulderItem2">Attempts: {boulder.attempts}</div>
+            <div className="boulderItem3">{sended}</div>
+            <div className="boulderItem4" >
+            <button className="editButton" onClick={(e) => {
                 e.preventDefault()
                 toggle()
-            }}>Edit</Button>
-            <Button onClick={(e) => {
+            }}>Edit</button>
+            </div>
+            <div className="boulderItem5" >
+            <button className="deleteButton" onClick={(e) => {
                 e.preventDefault()
                 deleteBoulder(boulder.id)
 
-            }}>X</Button>
+            }}>X</button>
+            </div>
             <Modal isOpen={modal} toggle={toggle}>
                     <ModalHeader toggle={toggle}>
                         Edit Boulder

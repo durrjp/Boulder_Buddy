@@ -5,10 +5,35 @@
     height: 7vh;
 }
 
+
+
 .leftNav {
     position: absolute;
     height: auto;
-    width: 15%;
+    width: 414px;
+    background-color: #EDE6E6;
+    transition-property: all 350ms ease;
+    animation: ;
+}
+
+.lineDiv {
+    text-align: center;
+}
+
+.line {
+    width: 188px;
+    height: 30px
+}
+
+.leftNavItem {
+    font-size: 36px;
+    color: rgb(0, 0, 0,.8);
+    text-align: center;
+
+}
+
+.leftNavItem:hover {
+    background-color: rgb(247, 183, 166);;
 }
 
 .menuButtonContainer {
@@ -16,9 +41,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1vh 0;
+    padding: 1vh;
 }
-
+.menuButtonContainerRight {
+    padding: 2vh;
+    display: flex;
+    justify-content: flex-end;
+}
 .nav__dashboard {
     margin: 5vh 0;
     padding: 2vh 0;
