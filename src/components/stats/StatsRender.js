@@ -16,7 +16,7 @@ export default (props) => {
     const dropDownValue = useRef(0)
     const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
 
-    const currentUser = users.find(user => user.id === currentUserId)
+    const currentUser = users.find(user => user.id === currentUserId) || {}
     const currUserSessions = sessions.filter(session => session.userId === currentUserId)
     const currUserSessionIdsArray = currUserSessions.map(cus => {
         return cus.id

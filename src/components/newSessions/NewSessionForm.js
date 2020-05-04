@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react"
 import {Button} from "reactstrap"
 import { SessionsContext } from "../mySessions/SessionProvider"
+import "./NewSessionForm.css"
 
 export default (props) => {
     const date = useRef()
@@ -15,7 +16,6 @@ export default (props) => {
         }
         addSession(newSessionObject).then((res) => {
             setCurrentSession(res)
-            console.log(res)
         })
     }
 
@@ -58,7 +58,7 @@ export default (props) => {
                 onClick={(e) => {
                     e.preventDefault()
                     constructNewSession()
-                    props.toggle()
+                    props.handleClick()
                 } }>Start Session</Button>
         </form>
         </>
