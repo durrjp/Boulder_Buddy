@@ -4,7 +4,6 @@ import line from "./Line.PNG"
 import NavToggleButton from './NavToggleButton'
 import 'react-animation/dist/keyframes.css'
 import { animations } from 'react-animation'
-import fadeInDown from "react-animations/lib/fade-in-down"
 
 
 
@@ -14,17 +13,14 @@ import fadeInDown from "react-animations/lib/fade-in-down"
 const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
     const [inProp, setInProp] = useState(false);
     const style = {
-        fadeInDown: {
-            animation: 'x 1s',
-            animationName: fadeInDown
-        }
+        animation: animations.fadeInUp
     } 
 
     
     
     if (showLeftNav === true) {
         return (
-        <div className="leftNav" style={style.fadeInDown}>
+        <div className="leftNav" style={style}>
             <div className={`leftNavItem`} onClick={() => {
                 setActiveList('home')
                 toggleNav()

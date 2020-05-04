@@ -1,0 +1,43 @@
+.statsHeader {
+    font-size: 42px;
+    text-align: center;
+    color: rgb(0, 0, 0,.75);
+    font-weight: bold;
+}
+.statsClimber {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    font-size: 24px;
+}
+.statsHighest {
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    font-size: 24px;
+
+}
+
+
+.pieSelectContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.pieChartAttempts {
+    text-align: center;
+}
+
+.barGraphContainer {
+    padding: 1em;
+    background-color: white;
+    margin: 1em;
+    border-radius: 7px;
+}
+
+.pieChartContainer {
+    background-color: white;
+    margin: 1em;
+    border-radius: 7px;
+}
