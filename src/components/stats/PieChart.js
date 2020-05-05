@@ -3,7 +3,6 @@ import {Pie} from "react-chartjs-2"
 
 
 export default ({pieGrade, userBoulders}) => {
-    console.log(pieGrade)
     const pieGradeBoulders = userBoulders.filter(boulder => boulder.grade === parseInt(pieGrade))
     let pieGradeAttempts = {
         notSent: 0,
@@ -39,7 +38,7 @@ export default ({pieGrade, userBoulders}) => {
                 {
                     label: "Attempts",
                     fill: false,
-                    backgroundColor: ["rbg(0,0,0,.8)", "rgb(107,53,17,.8)", "rgb(253,141,110,.7)"] ,
+                    backgroundColor: ["rgb(107,53,17,.8)", "rgb(253,141,110,.7)", "rgb(25,200,238,.7"] ,
                     barThickness: 'flex',
                     maxBarThickness: 20,
                     minBarLength: 2,
@@ -51,7 +50,7 @@ export default ({pieGrade, userBoulders}) => {
 
     return (
         <>
-        <Pie 
+        <Pie
             data={state.data}
             options= {{
                 elements: {

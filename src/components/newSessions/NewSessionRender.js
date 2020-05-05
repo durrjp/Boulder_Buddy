@@ -1,10 +1,10 @@
 import React, { useRef, useContext } from "react"
-import { Button } from "reactstrap"
 import NewSessionForm from "../newSessions/NewSessionForm"
 import CurrentSessionBoulder from "./CurrentSessionBoulder"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import NewBoulderButton from "./NewBoulderButton"
+import "../BoulderBuddy.css"
 
 
 export default (props) => {
@@ -43,35 +43,43 @@ export default (props) => {
     return (
         <>
         <div ref={newBoulderDiv} className="hidden">
-            <h3>Session # {currentSession.id}</h3>
+            <div className="sessionLogHeader">Session Log</div>
+            <div className="instruct">New Boulder:</div>
             <form>
-                <label htmlFor="numberOfAttempts">Number of Attempts: </label>
-                <input
-                    type="number"
-                    id="numberOfAttempts"
-                    ref={numberOfAttempts}
-                    required
-                    autoFocus
-                    className="form-control"
-                    placeholder="1"
-                    defaultValue="1"
-                />
-                <label htmlFor="sentCheckbox">Sent: </label>
-                <input
-                    type="checkbox"
-                    id="sentCheckBox"
-                    ref={send}
-                    required
-                    autoFocus
-                    className="form-control"
-                    placeholder=""
-                />
-                {
-                    arrayOfGrades.map(grades => <NewBoulderButton constructBoulder={constructBoulder} grade={grades}/>)
-                }
+                <div className="sessionRow">
+                    <label htmlFor="numberOfAttempts">Number of Attempts: </label>
+                    <input
+                        type="number"
+                        id="numberOfAttempts"
+                        ref={numberOfAttempts}
+                        required
+                        autoFocus
+                        className="form-control"
+                        placeholder="1"
+                        defaultValue="1"
+                    />
+                </div>
+                <div className="sessionRow">
+                    <label htmlFor="sentCheckbox">Sent: </label>
+                    <input
+                        type="checkbox"
+                        id="sentCheckBox"
+                        ref={send}
+                        required
+                        autoFocus
+                        className="form-control"
+                        placeholder=""
+                    />
+                </div>
+                <div className="instruct">Click Grade Below To Submit:</div>
+                <div className="btnContainer">
+                    {
+                        arrayOfGrades.map(grades => <NewBoulderButton className="gradeBtn" constructBoulder={constructBoulder} grade={grades}/>)
+                    }
+                </div>
             </form>
             <div className="newSessionLog">
-                <h2>Log</h2>
+                <div className="logHeader">Log</div>
                 <div className="newSessionLog_boulders">
                 {
                     currentSessionBoulders.map(boulder => <CurrentSessionBoulder boulder={boulder}/>)
@@ -79,10 +87,10 @@ export default (props) => {
                 </div>
             </div>
             <div className="submitSession">
-                <Button onClick={(evt) =>{
+                <div className="saveSessionBtn" onClick={(evt) =>{
                     evt.preventDefault()
                     props.setActiveList("mySessions")
-                }}>Save Session</Button>
+                }}>Save Session</div>
             </div>
         </div>
         <div ref={newSessionDiv}>

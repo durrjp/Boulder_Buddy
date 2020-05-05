@@ -4,6 +4,11 @@ body {
     overflow-y: hidden;
 }
 
+.instruct {
+    font-size: 24px;
+    text-align: center;
+}
+
 .App {
     height: 736px;
     width: 414px;

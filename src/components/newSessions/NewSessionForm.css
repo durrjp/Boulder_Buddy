@@ -3,6 +3,49 @@
     height: 90vh !important;
 } */
 
+.newSessionForm {
+    margin-top: 30px;
+}
+
 .hidden {
     display: none
+}
+
+.newSessionHeader {
+    font-size: 42px;
+    text-align: center;
+    color: rgb(0, 0, 0,.75);
+    font-weight: bold;
+}
+
+.form-group {
+    font-size: 26px
+}
+
+.form-group {
+    display: flex;
+justify-content: space-evenly;}
+
+.form-control {
+    width: 200px !important
+}
+
+.newSeshBtn {
+    background-color: rgb(107,52,17,.2) !important;
+    color: #6B3411;
+    border:none;
+    border-radius: 7px;
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+}
+
+.newSeshBtn:hover {
+    background-color: rgb(247, 183, 166) !important ;
+}
+
+.buttonHolder {
+    margin-top: 25px;
+    width:100%;
+    text-align: center;
 }

@@ -1,17 +1,17 @@
 import React from "react"
-import {Button} from "reactstrap"
+import "./Log.css"
 
 export default ({grade, constructBoulder}) => {
     return (
-        <Button type="submit"
+        <div className="gradeBtn" type="submit"
             onClick={
                 evt => {
                     evt.preventDefault()
                     constructBoulder(grade)
                 }
             }
-            className="btn">
+            >
             V{grade}
-        </Button>
+        </div>
     )
 }

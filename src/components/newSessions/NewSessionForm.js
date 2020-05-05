@@ -1,5 +1,4 @@
 import React, { useContext, useRef } from "react"
-import {Button} from "reactstrap"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import "./NewSessionForm.css"
 
@@ -21,6 +20,9 @@ export default (props) => {
 
     return (
         <>
+        <div className="newSessionHeader">
+            New Session
+        </div>
         <form className="newSessionForm">
             <fieldset>
                 <div className="form-group">
@@ -33,10 +35,7 @@ export default (props) => {
                         autoFocus
                         className="form-control"
                         placeholder="session date"
-                        defaultValue=
-                        {
-                            Date.now()
-                        }
+                        defaultValue="Date"
                     />
                 </div>
             </fieldset>
@@ -54,13 +53,17 @@ export default (props) => {
                 </div>
             </fieldset>
 
-            <Button type="submit"
-                onClick={(e) => {
-                    e.preventDefault()
-                    constructNewSession()
-                    props.handleClick()
-                } }>Start Session</Button>
+            
         </form>
+        <div className="buttonHolder">
+            <button className="newSeshBtn" type="submit"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        constructNewSession()
+                        props.handleClick()
+                    } }>Start Session</button>
+            
+        </div>
         </>
     )
 }

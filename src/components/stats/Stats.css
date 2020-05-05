@@ -32,7 +32,6 @@
 .barGraphContainer {
     background-color: white;
     margin: 1em;
-    border-radius: 7px;
     justify-content: center;
     padding-top: 2em;
     padding-bottom: 2em;
@@ -44,4 +43,34 @@
     border-radius: 7px;
     padding-top: 2em;
     padding-bottom: 2em;
+}
+
+.totalHeader {
+    margin-top: 30px;
+}
+
+.gradeSelectHead {
+    font-size: 24px;
+    padding-top: 5px;
+    margin-right: 10px;
+}
+.gradeSelect {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background-color:#EDE6E6; 
+    border:none;
+}
+
+.gradeSelect:hover {
+    background-color: rgb(247, 183, 166,.7) !important ;
+}
+
+.lineImage {
+    justify-content: center;
+}
+
+.lineContainer {
+    margin-top: 30px;
+    text-align: center;
 }

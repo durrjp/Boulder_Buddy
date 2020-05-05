@@ -5,6 +5,10 @@ import PieChart from "./PieChart"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import { UserContext } from "../users/UserProvider"
+import "../BoulderBuddy.css"
+import line from "../header/Line.PNG"
+
+
 
 
 
@@ -48,13 +52,18 @@ export default (props) => {
                 <div>V{highestBoulder}</div>
             </div>
         </div>
+        <div className="lineContainer">
+        <img className="lineImage" src={line} alt="Line" />
+        </div>
+        <div className="instruct totalHeader">Total Boulders: </div>
         <div className="barGraphContainer">
             <BarGraph />
         </div>
+        <div className="instruct">Flash % by Grade: </div>
         <div className="pieChartContainer">
             <div className="pieSelectContainer">
-                <div>Select Boudler Grade: </div>
-                <select onChange={(e) =>  {
+                <div className="gradeSelectHead">Select Boudler Grade: </div>
+                <select className="gradeSelect" onChange={(e) =>  {
                     e.preventDefault()
                     setPieGrade(e.target.value)
                 }}
