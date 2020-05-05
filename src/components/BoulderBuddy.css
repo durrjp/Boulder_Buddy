@@ -13,7 +13,7 @@ body {
     height: 736px;
     width: 414px;
     background-color: #EDE6E6;
-    margin: 40px auto 100px;
+    margin: auto;
 }
 
 .mainContainer {
@@ -39,6 +39,10 @@ body {
 
 .renderComponents {
     margin-top: 60px
+}
+
+.expandable {
+    transition: all 2s ease-in-out;
 }
 
 

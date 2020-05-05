@@ -2,25 +2,30 @@ import React, { useState } from 'react'
 import "./Navigation.css"
 import line from "./Line.PNG"
 import NavToggleButton from './NavToggleButton'
-import 'react-animation/dist/keyframes.css'
-import { animations } from 'react-animation'
-
-
-
-
-
+import { useSpring, animated } from "react-spring"
+import styled from "styled-components"
 
 const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
-    const [inProp, setInProp] = useState(false);
-    const style = {
-        animation: animations.fadeInUp
-    } 
+    const { open } = useSpring({ open: showLeftNav ? 0 : 1 });
 
-    
+    const CollapseWrapper = styled(animated.div)`
+        justify-content:center;
+        top: 4rem;
+        left: auto;
+        right: auto;
+        `;
+
+    const [inProp, setInProp] = useState(false);
     
     if (showLeftNav === true) {
         return (
-        <div className="leftNav" style={style}>
+        <CollapseWrapper className="leftNav" style={{
+            transform: open.interpolate({
+              range: [0, 1],
+              output: [0, -200],
+            }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
+          }}
+        >
             <div className={`leftNavItem`} onClick={() => {
                 setActiveList('home')
                 toggleNav()
@@ -73,10 +78,10 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
                 Stats
             </div>
             <div className="menuButtonContainerRight" onClick={toggleNav}>
-            <NavToggleButton />
+                <NavToggleButton />
             </div>
             
-        </div>
+        </CollapseWrapper>
         )
     } else {
         return ""
@@ -85,3 +90,4 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
 }
 
 export default LeftNav
+

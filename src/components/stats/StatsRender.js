@@ -6,7 +6,6 @@ import { SessionsContext } from "../mySessions/SessionProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import { UserContext } from "../users/UserProvider"
 import "../BoulderBuddy.css"
-import line from "../header/Line.PNG"
 
 
 
@@ -51,9 +50,6 @@ export default (props) => {
                 <div>Highest Boulder:</div>
                 <div>V{highestBoulder}</div>
             </div>
-        </div>
-        <div className="lineContainer">
-        <img className="lineImage" src={line} alt="Line" />
         </div>
         <div className="instruct totalHeader">Total Boulders: </div>
         <div className="barGraphContainer">

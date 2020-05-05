@@ -76,7 +76,7 @@ const Login = props => {
                         </fieldset>
                         <br></br>
                         <fieldset>
-                            <button class="signInButton"type="submit">
+                            <button className="signInButton"type="submit">
                                 Sign in
                             </button>
                         </fieldset>

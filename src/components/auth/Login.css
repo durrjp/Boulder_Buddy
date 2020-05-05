@@ -56,12 +56,13 @@ fieldset {
 .loginLogo {
     width: 390px;
     height: 415px;
-    margin-top: 47px;
+    margin-top: 28px;
     overflow: hidden
 }
 
 .loginLogoContainer {
     text-align: center;
+    margin: auto
 }
 
 .loginInfoContainer {

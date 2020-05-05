@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import {Link} from "react-router-dom"
 import HomeRender from "./home/HomeRender"
 import NewSessionRender from "./newSessions/NewSessionRender"
@@ -12,15 +12,13 @@ import LeftNav from "./header/LeftNav"
 import "./BoulderBuddy.css"
 import "./header/Header.css"
 import StatsRender from "./stats/StatsRender"
-
-
-
+import { FollowsProvider } from "./socialize/FollowProvider"
+import SocializeRender from "./socialize/SocializeRender"
 
 const Dashboard = (props) => {
     const [activeList, setActiveList] = useState("home")
     const [components, setComponents] = useState()
     
-
     const [showLeftNav, setShowLeftNav] = useState(false)
     const toggleNav = () => {
         setShowLeftNav(!showLeftNav)
@@ -47,8 +45,15 @@ const Dashboard = (props) => {
     )
 
     const showSocialize = () => (
-        <>
-        </>
+        <UserProvider>
+            <FollowsProvider>
+                <SessionsProvider>
+                    <BouldersProvider>
+                        <SocializeRender />
+                    </BouldersProvider>
+                </SessionsProvider>
+            </FollowsProvider>
+        </UserProvider>
     )
 
     const showStats = () => (
@@ -95,7 +100,7 @@ const Dashboard = (props) => {
                     >Logout</Link>
                 </div>
                 <div className="renderComponents">
-                    <LeftNav toggleNav={toggleNav} showLeftNav={showLeftNav} setActiveList={setActiveList} />
+                    <LeftNav className="expandable" toggleNav={toggleNav} showLeftNav={showLeftNav} setActiveList={setActiveList} />
                     {components}
                 </div>
             </DataStore>
