@@ -1,11 +1,15 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useRef, useState } from "react"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import "./NewSessionForm.css"
+import { Alert } from "reactstrap"
+import moment from "moment"
 
 export default (props) => {
     const date = useRef()
     const location = useRef()
     const { addSession, setCurrentSession } = useContext(SessionsContext)
+    const [show, setShow] = useState(false);
+    const toggleShowLocationAlert = () => setShow(!show)
 
     const constructNewSession = () => {
         const newSessionObject = {
@@ -17,7 +21,7 @@ export default (props) => {
             setCurrentSession(res)
         })
     }
-
+    var today = moment().format('YYYY-MM-DD')
     return (
         <>
         <div className="newSessionHeader">
@@ -35,7 +39,7 @@ export default (props) => {
                         autoFocus
                         className="form-control"
                         placeholder="session date"
-                        defaultValue="Date"
+                        defaultValue = {today}
                     />
                 </div>
             </fieldset>
@@ -49,20 +53,29 @@ export default (props) => {
                         required
                         autoFocus
                         className="form-control"
+                        placeholder="Ex. Bob's Bouldering Gym"
                     />
                 </div>
             </fieldset>
 
-            
         </form>
         <div className="buttonHolder">
             <button className="newSeshBtn" type="submit"
                     onClick={(e) => {
                         e.preventDefault()
-                        constructNewSession()
-                        props.handleClick()
-                    } }>Start Session</button>
-            
+                        if (location.current.value !== "") {
+                            constructNewSession()
+                            props.handleClick()
+                        } else {
+                            toggleShowLocationAlert()
+                        }
+                    }}
+            >Start Session</button>
+        </div>
+        <div className="locationAlertContainer">
+            <Alert color="danger" isOpen={show} toggle={toggleShowLocationAlert} dismissible>
+                                            Please enter location
+            </Alert>
         </div>
         </>
     )

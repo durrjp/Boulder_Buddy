@@ -35,8 +35,14 @@ export default (props) => {
     })
     let userBoulderGradesDropdown = Object.keys(userBoulderGrades)
     
-    const highBoulders = userBoulderGradesDropdown.map(grade => parseInt(grade))
-    const highestBoulder = Math.max(...highBoulders)
+    const userBouldersSent = userBoulders.map(boulder => {
+        if (boulder.sent === true) {
+            return parseInt(boulder.grade)
+        }
+        return 0
+    })
+        
+    const highestBoulder = Math.max(...userBouldersSent)
 
     return (
         <>
@@ -47,7 +53,7 @@ export default (props) => {
                 <div>{currentUser.name}</div>
             </div>
             <div className="statsHighest">
-                <div>Highest Boulder:</div>
+                <div>Highest Grade:</div>
                 <div>V{highestBoulder}</div>
             </div>
         </div>

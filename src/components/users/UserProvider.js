@@ -7,6 +7,7 @@ export const UserProvider = (props) => {
     const [searchTerm, setSearchTerm] = useState("")
     const [ filteredUsers, setFiltered ] = useState([])
     const [ usersFollowing, setUsersFollowing ] = useState([])
+    const [ currentFollowers, setCurrentFollowers ] = useState([])
 
 
 
@@ -38,7 +39,9 @@ export const UserProvider = (props) => {
 
     return (
         <UserContext.Provider value={{
-            users, addUser, searchTerm, setSearchTerm, filteredUsers, setFiltered, usersFollowing, setUsersFollowing
+            users, addUser, searchTerm, setSearchTerm,
+            filteredUsers, setFiltered, usersFollowing,
+            setUsersFollowing, currentFollowers, setCurrentFollowers
         }}>
             {props.children}
         </UserContext.Provider>

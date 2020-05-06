@@ -6,7 +6,7 @@ import { UserContext } from "../users/UserProvider"
 import { FollowsContext } from "./FollowProvider"
 
 export default () => {
-    const { users, usersFollowing, setUsersFollowing } = useContext(UserContext)
+    const { users, usersFollowing, setUsersFollowing, currentFollowers, setCurrentFollowers } = useContext(UserContext)
     const { follows } = useContext(FollowsContext)
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
@@ -21,6 +21,22 @@ export default () => {
             return false
         }
     }) || []
+
+    const currentFollowersArray = notCurrentUsers.filter(user => {
+        if(follows.some(follow => user.id === follow.userId && follow.userFollowingId === currentUserId)) {
+            return true
+        } else {
+            return false
+        }
+    })
+
+    useEffect(() => {
+        setCurrentFollowers(currentFollowersArray)
+    },[])
+
+    useEffect(() => {
+        setCurrentFollowers(currentFollowersArray)
+    },[follows])
 
     useEffect(() => {
         setUsersFollowing(usersFollowingArray)
@@ -50,10 +66,20 @@ export default () => {
                 </ModalBody>
             </Modal>
         </div>
-        <div className="Following">Following</div>
+        <div className="following">Following</div>
         <div>
             {
                 usersFollowing.map(user => {
+                    return (
+                    <div>{user.name}</div>
+                    )
+                })
+            }
+        </div>
+        <div className="followers">Followers</div>
+        <div>
+            {
+                currentFollowers.map(user => {
                     return (
                     <div>{user.name}</div>
                     )

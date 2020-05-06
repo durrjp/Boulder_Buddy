@@ -49,3 +49,7 @@ justify-content: space-evenly;}
     width:100%;
     text-align: center;
 }
+
+.locationAlertContainer {
+    margin-top: 50px;
+}
