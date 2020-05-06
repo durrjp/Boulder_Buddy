@@ -4,6 +4,11 @@ export const UserContext = React.createContext()
 
 export const UserProvider = (props) => {
     const [users, setUsers] = useState([])
+    const [searchTerm, setSearchTerm] = useState("")
+    const [ filteredUsers, setFiltered ] = useState([])
+    const [ usersFollowing, setUsersFollowing ] = useState([])
+
+
 
 
     const getUsers = () => {
@@ -33,7 +38,7 @@ export const UserProvider = (props) => {
 
     return (
         <UserContext.Provider value={{
-            users, addUser
+            users, addUser, searchTerm, setSearchTerm, filteredUsers, setFiltered, usersFollowing, setUsersFollowing
         }}>
             {props.children}
         </UserContext.Provider>

@@ -1,6 +1,59 @@
+.addFriendsBtnContainer {
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.addFriendsBtn {
+    width: 150px;
+    height: 60px;
+    font-size: 28px;
+    border: none;
+    background-color: rgba(107, 52, 17, 0.2);
+    border-radius: 7px;
+}
+
+.findFriendsHeader {
+    font-size: 30px
+}
+.searchUsers {
+    width: 100%;
+}
+
+.searchBar {
+    width: 100%;
+    text-align: center;
+    fill: white
+}
+
+.inputSearch {
+    width: 300px;
+    height: 65px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 7px;
+}
+
 .socializeHeader {
     font-size: 42px;
     text-align: center;
     color: rgb(0, 0, 0,.75);
     font-weight: bold;
+}
+.usersNotFollowingList {
+    margin-top: 1em
+}
+.person {
+    display: flex;
+    font-size: 24px;
+    margin: 0 1.5rem 1em 1.5em;
+    justify-content: space-between;
+}
+
+.followButton {
+    background: rgba(107, 52, 17, 0.2);
+    border-radius: 7px;
+    height: 50px;
+    width: 75px;
+    border: none
+
 }
