@@ -66,25 +66,32 @@ export default () => {
                 </ModalBody>
             </Modal>
         </div>
-        <div className="following">Following</div>
-        <div>
-            {
-                usersFollowing.map(user => {
-                    return (
-                    <div>{user.name}</div>
-                    )
-                })
-            }
-        </div>
-        <div className="followers">Followers</div>
-        <div>
-            {
-                currentFollowers.map(user => {
-                    return (
-                    <div>{user.name}</div>
-                    )
-                })
-            }
+        <div className="follows">
+            <div className="followingRow">
+        <div className="following">Following ({usersFollowing.length})</div>
+                <div>
+                    {
+                        usersFollowing.map(user => {
+                            return (
+                            <div>{user.name}</div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+            <div className="followersRow">
+                <div className="followers">Followers ({currentFollowers.length})</div>
+                <div>
+                    {
+                        currentFollowers.map(user => {
+                            return (
+                            <div>{user.name}</div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+
         </div>
 
         </>

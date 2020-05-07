@@ -5,7 +5,6 @@ import "./Navigation.css"
 const TopNav =  ({toggleNav}) => {
     const wrapperRef = useRef("")
 
-
     return (
     <header className="topNav">
         <div ref={wrapperRef} className="menuButtonContainer" onClick={()=> {

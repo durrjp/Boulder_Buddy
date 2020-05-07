@@ -9,6 +9,7 @@
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "moment": "^2.25.3",
+    "popmotion": "^8.7.2",
     "react": "^16.13.1",
     "react-animation": "^1.2.2",
     "react-animations": "^1.0.0",

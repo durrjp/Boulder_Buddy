@@ -10,6 +10,7 @@
     border: none;
     background-color: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
+    margin-top: 30px;
 }
 
 .addFriendsBtn:hover {
@@ -63,6 +64,27 @@
 
 .followButton:hover {
     background-color: rgb(247, 183, 166) ;
+}
+
+.follows {
+    display: flex;
+    margin-top: 30px;
+}
+
+.followingRow {
+    display:flex;
+    flex-flow: column nowrap;
+    width: 50%;
+    text-align: center;
+}
+
+.followersRow {
+    display:flex;
+    flex-flow: column nowrap;
+    width: 50%;
+    text-align: center;
+
+
 }
 
 .following {

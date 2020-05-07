@@ -14,6 +14,10 @@ import "./header/Header.css"
 import StatsRender from "./stats/StatsRender"
 import { FollowsProvider } from "./socialize/FollowProvider"
 import SocializeRender from "./socialize/SocializeRender"
+import {ReactComponent as HelpIcon} from "./header/helpSection2.svg"
+import { Modal } from "reactstrap"
+import HelpPage from "./header/HelpPage"
+
 
 const Dashboard = (props) => {
     const [activeList, setActiveList] = useState("home")
@@ -22,6 +26,11 @@ const Dashboard = (props) => {
     const [showLeftNav, setShowLeftNav] = useState(false)
     const toggleNav = () => {
         setShowLeftNav(!showLeftNav)
+    }
+
+    const [showHelp, setShowHelp] = useState(false)
+    const toggleHelp = () => {
+        setShowHelp(!showHelp)
     }
 
     const showHome = () => (
@@ -98,11 +107,15 @@ const Dashboard = (props) => {
                             props.history.push("/")
                         }}
                     >Logout</Link>
+                    <HelpIcon className="helpIcon" onClick={toggleHelp}/>
                 </div>
                 <div className="renderComponents">
                     <LeftNav className="expandable" toggleNav={toggleNav} showLeftNav={showLeftNav} setActiveList={setActiveList} />
                     {components}
                 </div>
+                <Modal isOpen={showHelp}>
+                    <HelpPage toggleHelp={toggleHelp}/>
+                </Modal>
             </DataStore>
             </div>
         </>

@@ -30,7 +30,7 @@ export default (props) => {
         <form className="newSessionForm">
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="newSessionDate">Date </label>
+                    <label htmlFor="newSessionDate">Session Date: </label>
                     <input
                         type="date"
                         id="newSessionDate"
