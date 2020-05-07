@@ -11,6 +11,7 @@
     background-color: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .addFriendsBtn:hover {
@@ -93,4 +94,25 @@
 
 .followers {
     font-size: 24px;
+}
+
+.leaderboardContainer {
+    text-align: center;
+}
+
+table,th,td {
+    margin:auto;
+    border: 1px solid #6B3411
+}
+
+td,th {
+    padding:.3em
+}
+
+.filled {
+    background-color: rgb(253, 141, 110,.4) ;
+}
+
+.tableHeader {
+    font-size:24px
 }

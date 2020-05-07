@@ -18,6 +18,7 @@ export default (props) => {
             location: location.current.value
         }
         addSession(newSessionObject).then((res) => {
+            console.log(res)
             setCurrentSession(res)
         })
     }
