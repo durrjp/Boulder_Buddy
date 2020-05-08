@@ -1,5 +1,6 @@
 import React from "react"
 import {Pie} from "react-chartjs-2"
+import "./Stats.css"
 
 
 export default ({pieGrade, userBoulders}) => {
@@ -38,7 +39,7 @@ export default ({pieGrade, userBoulders}) => {
                 {
                     label: "Attempts",
                     fill: false,
-                    backgroundColor: ["rgb(107,53,17,.8)", "rgb(253,141,110,.7)", "rgb(25,200,238,.7"] ,
+                    backgroundColor: ["rgb(107,53,17,.7)", "rgb(253,141,110,.7)", "rgb(251,244,65,.8)"] ,
                     barThickness: 'flex',
                     maxBarThickness: 20,
                     minBarLength: 2,
@@ -55,12 +56,19 @@ export default ({pieGrade, userBoulders}) => {
             options= {{
                 elements: {
                     arc: {
-                        borderWidth: 0
+                        borderWidth: 3
+                    }
+                },
+                legend: {
+                    labels: {
+                        color: '#6B3411',
+                        fontSize: 15
                     }
                 }
             }}
+            height ={300}
         />
-        <div className="pieChartAttempts">V{pieGrade} attempts: {pieGradeTotal}</div>
+        <div className="pieChartAttempts">V{pieGrade} Attempts: {pieGradeTotal}</div>
         </>
 
     )

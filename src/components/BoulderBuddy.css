@@ -5,12 +5,13 @@ body {
 }
 
 .instruct {
-    font-size: 24px;
+    font-size: 35px;
     text-align: center;
+    color:black
 }
 
 .App {
-    height: 736px;
+    max-height: 736px;
     width: 414px;
     background-color: #EDE6E6;
     margin: auto;

@@ -10,7 +10,7 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
 
     const CollapseWrapper = styled(animated.div)`
         justify-content:center;
-        top: 4rem;
+        top: 0rem;
         left: auto;
         right: auto;
         `;
@@ -26,6 +26,9 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
             }).interpolate(openValue => `translate3d(0, ${openValue}px, 0`),
           }}
         >
+            <div className="menuButtonContainerRight" onClick={toggleNav}>
+                <NavToggleButton />
+            </div>
             <div className={`leftNavItem`} onClick={() => {
                 setActiveList('home')
                 toggleNav()

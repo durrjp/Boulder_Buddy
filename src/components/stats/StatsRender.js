@@ -57,12 +57,12 @@ export default (props) => {
                 <div>V{highestBoulder}</div>
             </div>
         </div>
-        <div className="instruct totalHeader">Total Boulders: </div>
         <div className="barGraphContainer">
+            <div className="instruct">Total Boulders Climbed</div>
             <BarGraph />
         </div>
-        <div className="instruct">Flash % by Grade: </div>
         <div className="pieChartContainer">
+            <div className="instruct">Flash % by Grade: </div>
             <div className="pieSelectContainer">
                 <div className="gradeSelectHead">Select Boudler Grade: </div>
                 <select className="gradeSelect" onChange={(e) =>  {

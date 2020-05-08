@@ -55,6 +55,7 @@
     background: rgb(107,52,17,.2);
     text-align: center;
     border-radius: 7px;
+    position: absolute;
 }
 
 .saveSessionBtn:hover {

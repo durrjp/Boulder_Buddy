@@ -57,12 +57,12 @@ export default (props) => {
 
     let attemptsColorArray= []
     orderedAttempts.forEach(grade => {
-        attemptsColorArray.push("rgb(107,53,17,.8)")
+        attemptsColorArray.push("rgb(107,53,17,.4)")
     });
 
     let sendsColorArray= []
     orderedSends.forEach(grade => {
-        sendsColorArray.push("rgb(253,141,110,.7)")
+        sendsColorArray.push("rgb(253,141,110,1)")
     });
     
     let state = {
@@ -71,21 +71,18 @@ export default (props) => {
             datasets: [
                 {
                     label: "Attempted",
-                    fill: false,
                     backgroundColor: attemptsColorArray,
-                    barThickness: 'flex',
-                    maxBarThickness: 20,
-                    minBarLength: 2,
-                    data: attemptsArray
+                    data: attemptsArray,
+                    xAxisID: "bar-x-axis1",
+                    barThickness: 17
                 },
                 {
                     label: "Completed",
-                    fill: false,
                     backgroundColor: sendsColorArray,
-                    barThickness: 'flex',
-                    maxBarThickness: 20,
-                    minBarLength: 2,
-                    data: sendsArray
+                    data: sendsArray,
+                    xAxisID: "bar-x-axis1",
+                    barThickness: 25
+
                 }
             ]
         }
@@ -97,16 +94,41 @@ export default (props) => {
                 maintainAspectRatio:false,
                 scales: {
                     xAxes: [{
+                        id: "bar-x-axis1",
+                        gridLines: {
+                            color: "rgba(0, 0, 0, 0)",
+                            offsetGridLines: true
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Grade",
+                            fontsize: 15,
+                            padding: 4
+                        },
+                        stacked: true,
+                        categoryPercentage: 0.5,
+                        barPercentage: 0.5},
+                    ],
+                    yAxes: [{
                         gridLines: {
                             color: "rgba(0, 0, 0, 0)",
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: "Grade",
-                            fontsize: 6,
-                            padding: 4
+                            labelString: "Attempts",
+                            fontsize: 15,
+                        },
+                        stacked: false,
+                        ticks: {
+                            beginAtZero: true
                         }
                     }]
+                },
+                legend: {
+                    labels: {
+                        color: '#6B3411',
+                        fontSize: 15
+                    }
                 }
             }}
             height={400}
