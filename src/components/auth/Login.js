@@ -11,7 +11,7 @@ const Login = props => {
     const userName = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8080/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -32,7 +32,7 @@ const Login = props => {
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
                 } else if (!exists) {
-                    fetch("http://localhost:8088/users", {
+                    fetch("http://localhost:8080/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

@@ -13,16 +13,22 @@ export const UserProvider = (props) => {
 
 
     const getUsers = () => {
-        return fetch("http://localhost:8088/users")
+        return fetch("http://localhost:8080/users", {
+            method: "GET",
+            headers: {
+                "cache-control":"no-cache"
+            }
+        })
             .then(res => res.json())
             .then(setUsers)
     }
 
     const addUser = user => {
-        return fetch("http://localhost:8088/users", {
+        return fetch("http://localhost:8080/users", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "cache-control":"no-cache"
             },
             body: JSON.stringify(user)
         })

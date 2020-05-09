@@ -9,7 +9,7 @@ export default ({toggleHelp}) => {
         <div className="helpModal">
 
             <div className="helpModalTop">
-                <img className="climberGuy" src={climberGuy} alt="Climber image" />
+                <img className="climberGuy" src={climberGuy} alt="" />
                 <div className="helpHeader">Help Page</div>
                 <button className="helpModalCloseBtn" onClick={() => toggleHelp()}>X</button>
             </div>

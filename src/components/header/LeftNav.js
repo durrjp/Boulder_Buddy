@@ -39,7 +39,7 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
             </div>
 
             <div className="lineDiv">
-            <img className="line" src={line}/>
+            <img className="line" src={line} alt=""/>
             </div>
 
             <div className="leftNavItem" onClick={() => {
@@ -51,7 +51,7 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
             </div>
             
             <div className="lineDiv">
-            <img className="line" src={line}/>
+            <img className="line" src={line} alt=""/>
             </div>
             <div className="leftNavItem" onClick={() => {
                 setActiveList('mySessions')
@@ -61,7 +61,7 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
                 My Sessions
             </div>
             <div className="lineDiv">
-            <img className="line" src={line}/>
+            <img className="line" src={line} alt=""/>
             </div>
             <div className="leftNavItem" onClick={() => {
                 setActiveList('socialize')
@@ -71,7 +71,7 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
                 Socialize
             </div>
             <div className="lineDiv">
-            <img className="line" src={line}/>
+            <img className="line" src={line} alt=""/>
             </div>
             <div className="leftNavItem" onClick={() => {
                 setActiveList('stats')

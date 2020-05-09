@@ -9,7 +9,7 @@ const Register = props => {
     const verifyPassword = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8088/users?email=${email.current.value}`)
+        return fetch(`http://localhost:8080/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -27,7 +27,7 @@ const Register = props => {
                 existingUserCheck()
                 .then((result) => {
                     if (result) {
-                    fetch("http://localhost:8088/users", {
+                    fetch("http://localhost:8080/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"

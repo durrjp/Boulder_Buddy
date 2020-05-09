@@ -80,6 +80,7 @@ export default () => {
     const top10Boulders = sortedBoulders.slice(0, 10).map((boulder => {
         return boulder
     }))
+    
 
     let counter = 0
 
@@ -89,13 +90,16 @@ export default () => {
         <div className="leaderboardContainer">
             <div className="tableHeader">Top 10 Climbs - All Time</div>
             <table className="leaderBoardTable">
-                <tr className="filled">
-                    <th>Rank:</th>
-                    <th>Climber:</th>
-                    <th>Grade:</th>
-                    <th>Attempts:</th>
-                    <th>Location:</th>
-                </tr>
+                <thead>
+                    <tr className="filled">
+                        <th>Rank:</th>
+                        <th>Climber:</th>
+                        <th>Grade:</th>
+                        <th>Attempts:</th>
+                        <th>Location:</th>
+                    </tr>
+                </thead>
+                <tbody>
             {
                 top10Boulders.map(boulder=> {
                     const currSesh = sessions.find(session => session.id === boulder.sessionId) || {}
@@ -107,6 +111,7 @@ export default () => {
 
                 })
             }
+                </tbody>
             </table>
         </div>
         <div className="follows">

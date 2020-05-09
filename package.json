@@ -9,7 +9,6 @@
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
     "moment": "^2.25.3",
-    "popmotion": "^8.7.2",
     "react": "^16.13.1",
     "react-animation": "^1.2.2",
     "react-animations": "^1.0.0",
@@ -18,12 +17,11 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
-    "react-transition-group": "^4.3.0",
     "reactstrap": "^8.4.1",
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=2999 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -10,6 +10,16 @@
     margin: 20px
 }
 
+.seshDeleteBtnContainer {
+    text-align: center;
+}
+
+.sessionDeleteBtn {
+    background-color: rgba(107, 52, 17, 0.2);
+    border:none;
+    border-radius: 7px;
+}
+
 .mySessionsHeader {
     font-size: 42px;
     text-align: center;

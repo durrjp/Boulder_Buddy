@@ -7,16 +7,22 @@ export const FollowsProvider = (props) => {
 
 
     const getFollows = () => {
-        return fetch("http://localhost:8088/follows")
+        return fetch("http://localhost:8080/follows", {
+            method: "GET",
+            headers: {
+                "cache-control":"no-cache"
+            }
+        })
             .then(res => res.json())
             .then(setFollows)
     }
 
     const addFollow = follow => {
-        return fetch("http://localhost:8088/follows", {
+        return fetch("http://localhost:8080/follows", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "cache-control":"no-cache"
             },
             body: JSON.stringify(follow)
         })
@@ -24,8 +30,11 @@ export const FollowsProvider = (props) => {
     }
 
     const deleteFollow = followId => {
-        return fetch(`http://localhost:8088/follows/${followId}`, {
-            method: "DELETE"
+        return fetch(`http://localhost:8080/follows/${followId}`, {
+            method: "DELETE",
+            headers: {
+                "cache-control":"no-cache"
+            }
         })
             .then(getFollows)
     }

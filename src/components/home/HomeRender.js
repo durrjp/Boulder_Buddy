@@ -41,7 +41,7 @@ export default (props) => {
             </div>
         </div>
         <div className="logoContainer">
-            <img className="imageLogo" src={logo}/>
+            <img className="imageLogo" src={logo} alt=""/>
         </div>
     </>
     )

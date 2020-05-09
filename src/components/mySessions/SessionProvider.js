@@ -8,17 +8,23 @@ export const SessionsProvider = (props) => {
 
 
     const getSessions = () => {
-        return fetch("http://localhost:8088/sessions")
+        return fetch("http://localhost:8080/sessions", {
+            method: "GET",
+            headers: {
+                "cache-control":"no-cache"
+            }
+        })
             .then(res => res.json())
             .then(setSessions)
     }
 
 
     const addSession = session => {
-        return fetch("http://localhost:8088/sessions", {
+        return fetch("http://localhost:8080/sessions", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "cache-control":"no-cache"
             },
             body: JSON.stringify(session)
         })
@@ -31,10 +37,11 @@ export const SessionsProvider = (props) => {
     }
 
     const updateSession = session => {
-        return fetch(`http://localhost:8088/sessions/${session.id}`, {
+        return fetch(`http://localhost:8080/sessions/${session.id}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "cache-control":"no-cache"
             },
             body: JSON.stringify(session)
         })
@@ -42,8 +49,11 @@ export const SessionsProvider = (props) => {
     }
 
     const deleteSession = sessionId => {
-        return fetch(`http://localhost:8088/sessions/${sessionId}`, {
-            method: "DELETE"
+        return fetch(`http://localhost:8080/sessions/${sessionId}`, {
+            method: "DELETE",
+            headers: {
+                "cache-control":"no-cache"
+            },
         })
             .then(getSessions)
     }
