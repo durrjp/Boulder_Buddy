@@ -10,6 +10,10 @@
     margin: 20px
 }
 
+.sessionTitle {
+    width:50%
+}
+
 .seshDeleteBtnContainer {
     text-align: center;
 }
@@ -31,7 +35,8 @@
 .sessionDate {
     font-size: 24px;
     margin-bottom: 5px;
-    width: auto
+    width: 70%;
+    font-weight: bold;
 
 }
 
@@ -83,4 +88,25 @@
 
 .deleteButton:hover {
     background-color: rgb(247, 183, 166) ;
+}
+
+
+.sessionHeadContainer {
+    display:flex;
+    justify-content: ;
+
+}
+.dltSeshBtn {
+    border:none;
+    background: rgb(116, 5, 5,.7);
+    border-radius: 7px; 
+    color:white;
+    height: 25px;
+    font-size: 14px;
+}
+
+.dltSeshContainer {
+    display:flex;
+    justify-content: flex-end;
+    width: 50%
 }

@@ -3,12 +3,17 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap"
 import "./Socialize.css"
 import FindFriendsList from "./FindFriendsList"
 import { UserContext } from "../users/UserProvider"
-import { FollowsContext } from "./FollowProvider"
+import { FollowsContext, FollowsProvider } from "./FollowProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import LeaderBoardItem from "./LeaderBoardItem"
+import FollowingRender from "./FollowingRender"
+import { UserProvider } from "../users/UserProvider"
+import { SessionsProvider } from "../mySessions/SessionProvider"
+import { BouldersProvider } from "../boulders/BoulderProvider"
+import FollowersRender from "./FollowersRender"
 
-export default () => {
+export default ({setMainComponents, showStats}) => {
     const { users, usersFollowing, setUsersFollowing, currentFollowers, setCurrentFollowers } = useContext(UserContext)
     const { follows } = useContext(FollowsContext)
     const { boulders } = useContext(BouldersContext)
@@ -17,8 +22,9 @@ export default () => {
     const toggle = () => setModal(!modal)
     const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
     const notCurrentUsers = users.filter(user => user.id !== currentUserId)
-    const [activeSocList, setActiveSocList] = useState("home")
-    const [socComponents, setSocComponents] = useState()
+
+
+    // creating arrays for users following and users not following
     const usersFollowingArray = notCurrentUsers.filter(user => {
         if (follows.some(follow => user.id === follow.userFollowingId && follow.userId === currentUserId)) {
             return true
@@ -49,18 +55,19 @@ export default () => {
 
     useEffect(() => {
         setUsersFollowing(usersFollowingArray)
-    },[follows])
-
+    },[follows, users])
+    
+    //sorting the boulders highest to lowest
     const bouldersSent = boulders.filter(boulder => boulder.sent === true)
     const sortedArray= bouldersSent.sort((a,b) => b.grade - a.grade)
-
-   
+    
+    
     const sortedBoulders = bouldersSent.sort((a,b) => {
         var gradeA = a.grade
         var gradeB = b.grade
         var attemptsA = a.attempts
         var attemptsB = b.attempts
-    
+        
         if (gradeA > gradeB) {
             return -1
         }
@@ -75,23 +82,48 @@ export default () => {
         }
         return 0
     })
-
-
-    const top10Boulders = sortedBoulders.slice(0, 10).map((boulder => {
+    
+    
+    const top10Boulders = sortedBoulders.slice(0, 5).map((boulder => {
         return boulder
     }))
     
-
+    const child   = { width: `414px`, height: `340px`}
+    const parent  = { width: `900px`, height: `340px`}
+    
+    
     let counter = 0
+    // controlling following vs. followers
+    const [activeList, setActiveList] = useState("following")
+    const [components, setComponents] = useState()
+    
+    const showFollowing = () => (
+        <FollowingRender usersFollowing={usersFollowing} />
+    )
+    
+    const showFollowers = () => (
+        <FollowersRender currentFollowers={currentFollowers}/>
+        )
+    //test
+    
+    //test
 
+    useEffect(() => {
+        if (activeList === "following") {
+            setComponents(showFollowing)
+        }
+        if (activeList === "followers") {
+            setComponents(showFollowers)
+        }
+        
+    }, [activeList])
     return (
-        <>
-        <div className="socializeHeader">Socialize</div>
+            <>
         <div className="leaderboardContainer">
-            <div className="tableHeader">Top 10 Climbs - All Time</div>
+            <div className="tableHeader">Leaderboard</div>
             <table className="leaderBoardTable">
                 <thead>
-                    <tr className="filled">
+                    <tr>
                         <th>Rank:</th>
                         <th>Climber:</th>
                         <th>Grade:</th>
@@ -114,33 +146,17 @@ export default () => {
                 </tbody>
             </table>
         </div>
-        <div className="follows">
-            <div className="followingRow">
-        <div className="following">Following ({usersFollowing.length})</div>
-                <div>
-                    {
-                        usersFollowing.map(user => {
-                            return (
-                            <div>{user.name}</div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
-            <div className="followersRow">
-                <div className="followers">Followers ({currentFollowers.length})</div>
-                <div>
-                    {
-                        currentFollowers.map(user => {
-                            return (
-                            <div>{user.name}</div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
-
+        <div>
+            <button onClick={(e) => {
+                e.preventDefault()
+                setActiveList("following")
+            }}>Following</button>
+            <button  onClick={(e) => {
+                e.preventDefault()
+                setActiveList("followers")
+            }}>Followers</button>
         </div>
+        {components}
         <div className="addFriendsBtnContainer">
             <button className="addFriendsBtn" onClick={(e) => {
                 e.preventDefault()

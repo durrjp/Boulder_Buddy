@@ -69,7 +69,7 @@ const Dashboard = (props) => {
         <UserProvider>
             <SessionsProvider>
                 <BouldersProvider>
-                    <StatsRender/>
+                    <StatsRender />
                 </BouldersProvider>
             </SessionsProvider>
         </UserProvider>

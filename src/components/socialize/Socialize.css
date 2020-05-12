@@ -73,20 +73,12 @@
     margin-top: 30px;
 }
 
-.followingRow {
-    display:flex;
-    flex-flow: column nowrap;
-    width: 50%;
-    text-align: center;
+.followingContainer {
+    height: 300px
 }
 
-.followersRow {
-    display:flex;
-    flex-flow: column nowrap;
-    width: 50%;
-    text-align: center;
-
-
+.followersContainer {
+    height: 300px
 }
 
 .following {
@@ -101,9 +93,10 @@
     text-align: center;
 }
 
+
 table,th,td {
     margin:auto;
-    border: 1px solid #6B3411
+    padding: .1em
 }
 
 td,th {
