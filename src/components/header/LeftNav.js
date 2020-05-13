@@ -16,6 +16,8 @@ const LeftNav = ({showLeftNav, setActiveList, toggleNav}) => {
         `;
 
     const [inProp, setInProp] = useState(false);
+
+    
     
     if (showLeftNav === true) {
         return (

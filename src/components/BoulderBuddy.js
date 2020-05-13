@@ -5,7 +5,6 @@ import Register from "./auth/Register"
 import Login from "./auth/Login"
 import "./BoulderBuddy.css"
 
-
 export default () => (
     <>
     <div className="App">

@@ -10,6 +10,8 @@ import LeaderBoardItem from "./LeaderBoardItem"
 import FollowingRender from "./FollowingRender"
 import FollowersRender from "./FollowersRender"
 import FollowingStats from "./FollowingStats"
+import {ReactComponent as Socialize} from "../home/homeImages/friends.svg"
+
 
 
 export default () => {
@@ -19,6 +21,8 @@ export default () => {
     const { sessions } = useContext(SessionsContext)
     const followersRef = useRef()
     const followingRef = useRef()
+    const followersBtn = useRef()
+    const followingBtn  = useRef()
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
     const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
@@ -114,9 +118,20 @@ export default () => {
     const handleClick = () => {
         const wrapper = followersRef.current
         wrapper.classList.toggle('hidden')
+        wrapper.classList.toggle('selected')
 
         const seshWrapper = followingRef.current
         seshWrapper.classList.toggle('hidden')
+        wrapper.classList.toggle('selected')
+    }
+
+    const handleColorChange = () => {
+        const wrapper = followersBtn.current
+        wrapper.classList.toggle('selected')
+
+        const otherWrapper = followingBtn.current
+        otherWrapper.classList.toggle('selected')
+
     }
 
     return (
@@ -148,19 +163,21 @@ export default () => {
                 </tbody>
             </table>
         </div>
-        <div>
-            <button onClick={(e) => {
+        <div className="btnsContainer">
+            <button ref={followingBtn} className="followingTogBtn selected" onClick={(e) => {
                 e.preventDefault()
                 if (view === true) {
                     handleClick()
+                    handleColorChange()
                     toggleView()
                 }
                 // setActiveList("following")
             }}>Following</button>
-            <button  onClick={(e) => {
+            <button ref={followersBtn} className="followersTogBtn"  onClick={(e) => {
                 e.preventDefault()
                 if (view === false) {
                     handleClick()
+                    handleColorChange()
                     toggleView()
                 }
                 // setActiveList("followers")
@@ -168,7 +185,7 @@ export default () => {
         </div>
         {/* {components} */}
         <div ref={followingRef} className="followingContainer">
-                <div className="following">Following ({usersFollowing.length})</div>
+                <div className="following"><span className="total">Total:</span> {usersFollowing.length}</div>
                 <div className="followingList">
                     {
                         usersFollowing.map(user => {
@@ -182,12 +199,15 @@ export default () => {
                 </div>
         </div>
         <div ref={followersRef} className="followersContainer hidden">
-            <div className="followers">Followers ({currentFollowers.length})</div>
+            <div className="followers"><span className="total">Total:</span> {currentFollowers.length}</div>
             <div className="followersList">
                 {
                     currentFollowers.map(user => {
                         return (
-                        <div>{user.name}</div>
+                        <div className="followerRow">
+                            <Socialize className="friend_Icon"/>
+                            <div className="friendName">{user.name}</div>
+                        </div>
                         )
                     })
                 }
@@ -198,11 +218,11 @@ export default () => {
                 e.preventDefault()
                 toggle()
 
-            }}>Find Friends</button>
+            }}>Find Climbers</button>
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>
                     <div className="findFriendsHeader">
-                        Find Friends
+                        Find Climbers
                     </div>
                 </ModalHeader>
                 <ModalBody>

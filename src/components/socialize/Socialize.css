@@ -4,14 +4,12 @@
     justify-content: center;
 }
 .addFriendsBtn {
-    width: 200px;
+    width: 170px;
     height: 60px;
-    font-size: 28px;
+    font-size: 24px;
     border: none;
     background-color: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 .addFriendsBtn:hover {
@@ -74,30 +72,72 @@
 }
 
 .followingContainer {
-    height: 300px
+    height: 300px;
+    overflow-y: scroll;
+    margin: 1em;
+    justify-content: center;
 }
 
 .followersContainer {
-    height: 300px
+    height: 300px;
+    overflow-y: scroll;
+    margin: 1em
+
 }
 
 .following {
-    font-size: 24px;
+    font-size: 18px;
+    text-align: center;
+    color: #FD8D6E;
+    margin-bottom: 5px;
 }
 
 .followers {
-    font-size: 24px;
+    font-size: 18px;
+    text-align: center;
+    color: #FD8D6E
+
+}
+
+.followerRow {
+    display: flex;
+    justify-content: center;
+}
+
+.followingStatsContainer {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.friendName {
+    margin-left: 10px;
+    width: 150px
+}
+
+.total {
+    color:black;
+    margin-bottom: 5px;
+}
+
+.friendStatsBtn {
+    background: rgba(107, 52, 17, 0.2);
+    border:none;
+    border-radius: 7px;
+    padding:.3em;
+    width: 100px
 }
 
 .leaderboardContainer {
     text-align: center;
     font-size: 14px;
+    padding-top: 20px;
 }
 
 
 table,th,td {
     margin:auto;
-    padding: .1em
+    padding: .1em;
 }
 
 td,th {
@@ -109,9 +149,43 @@ td,th {
 }
 
 .tableHeader {
-    font-size:24px
-}
+    font-size:24px;
+    font-weight: bold;
 
+}
+.friend_Icon {
+    width: 32px;
+    height: 32px;
+    fill: #6B3411
+}
 .hidden {
     display:none
+}
+
+.btnsContainer {
+    display:flex;
+    justify-content: center;
+    margin-top: 5px
+}
+
+.followingTogBtn {
+    background: rgba(107, 52, 17, 0.2);
+    border: none;
+    font-size:24px;
+    width: 50%
+}
+
+.followersTogBtn {
+    background: rgba(107, 52, 17, 0.2);
+    border:none;
+    font-size:24px;
+    width: 50%
+}
+
+.selected {
+    background-color: rgb(247, 183, 166)
+}
+
+.noStats {
+    background-color: rgb(0, 0, 0,.25) !important
 }
