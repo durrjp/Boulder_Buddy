@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react"
+import React, {useState, useContext, useEffect, useRef} from "react"
 import { Modal, ModalHeader, ModalBody } from "reactstrap"
 import "./Socialize.css"
 import FindFriendsList from "./FindFriendsList"
@@ -9,21 +9,25 @@ import { SessionsContext } from "../mySessions/SessionProvider"
 import LeaderBoardItem from "./LeaderBoardItem"
 import FollowingRender from "./FollowingRender"
 import FollowersRender from "./FollowersRender"
+import FollowingStats from "./FollowingStats"
 
-export default ({setMainComponents, showStats}) => {
+
+export default () => {
     const { users, usersFollowing, setUsersFollowing, currentFollowers, setCurrentFollowers } = useContext(UserContext)
     const { follows } = useContext(FollowsContext)
     const { boulders } = useContext(BouldersContext)
     const { sessions } = useContext(SessionsContext)
+    const followersRef = useRef()
+    const followingRef = useRef()
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
     const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
     const notCurrentUsers = users.filter(user => user.id !== currentUserId)
 
+    
 
     // creating arrays for users following and users not following
     const usersFollowingArray = notCurrentUsers.filter(user => {
-        debugger
         if (follows.some(follow => user.id === follow.userFollowingId && follow.userId === currentUserId)) {
             return true
         } else {
@@ -39,17 +43,11 @@ export default ({setMainComponents, showStats}) => {
         }
     })
 
-    useEffect(() => {
-        setCurrentFollowers(currentFollowersArray)
-    },[])
+  
 
     useEffect(() => {
         setCurrentFollowers(currentFollowersArray)
     },[follows, users])
-
-    useEffect(() => {
-        setUsersFollowing(usersFollowingArray)
-    },[])
 
     useEffect(() => {
         setUsersFollowing(usersFollowingArray)
@@ -87,26 +85,39 @@ export default ({setMainComponents, showStats}) => {
     }))
 
     let counter = 0
-    // controlling following vs. followers
+    // controlling home vs. stats
     const [activeList, setActiveList] = useState("following")
     const [components, setComponents] = useState()
 
-    const showFollowing = () => (
+    const showHome = () => (
         <FollowingRender usersFollowing={usersFollowing} />
     )
 
-    const showFollowers = () => (
+    const showStats = () => (
         <FollowersRender currentFollowers={currentFollowers}/>
         )
 
     useEffect(() => {
-        if (activeList === "following") {
-            setComponents(showFollowing)
+        if (activeList === "home") {
+            setComponents(showHome)
         }
         if (activeList === "followers") {
-            setComponents(showFollowers)
+            setComponents(showStats)
         }
     }, [activeList])
+
+    //end control
+
+    const [view, setView] = useState(false)
+    const toggleView = () => setView(!view)
+
+    const handleClick = () => {
+        const wrapper = followersRef.current
+        wrapper.classList.toggle('hidden')
+
+        const seshWrapper = followingRef.current
+        seshWrapper.classList.toggle('hidden')
+    }
 
     return (
             <>
@@ -140,14 +151,48 @@ export default ({setMainComponents, showStats}) => {
         <div>
             <button onClick={(e) => {
                 e.preventDefault()
-                setActiveList("following")
+                if (view === true) {
+                    handleClick()
+                    toggleView()
+                }
+                // setActiveList("following")
             }}>Following</button>
             <button  onClick={(e) => {
                 e.preventDefault()
-                setActiveList("followers")
+                if (view === false) {
+                    handleClick()
+                    toggleView()
+                }
+                // setActiveList("followers")
             }}>Followers</button>
         </div>
-        {components}
+        {/* {components} */}
+        <div ref={followingRef} className="followingContainer">
+                <div className="following">Following ({usersFollowing.length})</div>
+                <div className="followingList">
+                    {
+                        usersFollowing.map(user => {
+                            return (
+                            <>
+                            <FollowingStats user={user}/>
+                            </>
+                            )
+                        })
+                    }
+                </div>
+        </div>
+        <div ref={followersRef} className="followersContainer hidden">
+            <div className="followers">Followers ({currentFollowers.length})</div>
+            <div className="followersList">
+                {
+                    currentFollowers.map(user => {
+                        return (
+                        <div>{user.name}</div>
+                        )
+                    })
+                }
+            </div>
+        </div>
         <div className="addFriendsBtnContainer">
             <button className="addFriendsBtn" onClick={(e) => {
                 e.preventDefault()
@@ -164,6 +209,9 @@ export default ({setMainComponents, showStats}) => {
                     <FindFriendsList />
                 </ModalBody>
             </Modal>
+        </div>
+        <div>
+
         </div>
 
         </>
