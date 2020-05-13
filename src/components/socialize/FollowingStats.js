@@ -7,16 +7,13 @@ import { BouldersContext } from "../boulders/BoulderProvider"
 import { UserContext } from "../users/UserProvider"
 import "../BoulderBuddy.css"
 
-export default (props) => {
+export default ({user}) => {
     const [pieGrade, setPieGrade] = useState(0)
-    const { users } = useContext(UserContext)
     const {sessions} = useContext(SessionsContext)
     const {boulders} = useContext(BouldersContext)
     const dropDownValue = useRef(0)
-    const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
-
-    const currentUser = users.find(user => user.id === currentUserId) || {}
-    const currUserSessions = sessions.filter(session => session.userId === currentUserId)
+    
+    const currUserSessions = sessions.filter(session => session.userId === user.id)
     const currUserSessionIdsArray = currUserSessions.map(cus => {
         return cus.id
     })
@@ -46,7 +43,7 @@ export default (props) => {
         <div>
             <div className="statsClimber">
                 <div>Climber:</div>
-                <div>{currentUser.name}</div>
+                <div>{user.name}</div>
             </div>
             <div className="statsHighest">
                 <div>Highest Grade:</div>

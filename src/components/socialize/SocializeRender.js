@@ -3,14 +3,11 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap"
 import "./Socialize.css"
 import FindFriendsList from "./FindFriendsList"
 import { UserContext } from "../users/UserProvider"
-import { FollowsContext, FollowsProvider } from "./FollowProvider"
+import { FollowsContext} from "./FollowProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import LeaderBoardItem from "./LeaderBoardItem"
 import FollowingRender from "./FollowingRender"
-import { UserProvider } from "../users/UserProvider"
-import { SessionsProvider } from "../mySessions/SessionProvider"
-import { BouldersProvider } from "../boulders/BoulderProvider"
 import FollowersRender from "./FollowersRender"
 
 export default ({setMainComponents, showStats}) => {
@@ -26,6 +23,7 @@ export default ({setMainComponents, showStats}) => {
 
     // creating arrays for users following and users not following
     const usersFollowingArray = notCurrentUsers.filter(user => {
+        debugger
         if (follows.some(follow => user.id === follow.userFollowingId && follow.userId === currentUserId)) {
             return true
         } else {
@@ -47,7 +45,7 @@ export default ({setMainComponents, showStats}) => {
 
     useEffect(() => {
         setCurrentFollowers(currentFollowersArray)
-    },[follows])
+    },[follows, users])
 
     useEffect(() => {
         setUsersFollowing(usersFollowingArray)
@@ -82,31 +80,24 @@ export default ({setMainComponents, showStats}) => {
         }
         return 0
     })
-    
-    
+
+
     const top10Boulders = sortedBoulders.slice(0, 5).map((boulder => {
         return boulder
     }))
-    
-    const child   = { width: `414px`, height: `340px`}
-    const parent  = { width: `900px`, height: `340px`}
-    
-    
+
     let counter = 0
     // controlling following vs. followers
     const [activeList, setActiveList] = useState("following")
     const [components, setComponents] = useState()
-    
+
     const showFollowing = () => (
         <FollowingRender usersFollowing={usersFollowing} />
     )
-    
+
     const showFollowers = () => (
         <FollowersRender currentFollowers={currentFollowers}/>
         )
-    //test
-    
-    //test
 
     useEffect(() => {
         if (activeList === "following") {
@@ -115,8 +106,8 @@ export default ({setMainComponents, showStats}) => {
         if (activeList === "followers") {
             setComponents(showFollowers)
         }
-        
     }, [activeList])
+
     return (
             <>
         <div className="leaderboardContainer">

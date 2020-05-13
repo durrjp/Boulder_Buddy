@@ -6,8 +6,9 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap"
 
 export default ({ usersFollowing}) => {
     const [modal, setModal] = useState(false)
-    const toggle = () => setModal(!modal)
-    if(usersFollowing.length !== 0) {
+    const toggle = () => {
+        setModal(!modal)
+    }
         return (
             <>
             <div className="followingContainer">
@@ -22,9 +23,8 @@ export default ({ usersFollowing}) => {
                             <Modal isOpen={modal} >
                                 <ModalHeader toggle={toggle}>Stats
                                 </ModalHeader>
-                                <ModalBody>
-                                    <FollowingStats />
-                                </ModalBody>
+                                <ModalBody></ModalBody>
+                                    <FollowingStats user={user}/>
                             </Modal>
                             </>
                             )
@@ -35,7 +35,5 @@ export default ({ usersFollowing}) => {
             
             </>
         )
-    } else {
-        return "didn't load in time..."
-    }
+    
 }
