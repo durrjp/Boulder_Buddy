@@ -22,15 +22,15 @@ export default (props) => {
         <div>V{props.boulder.grade}</div>
         <div>Attempts: {props.boulder.attempts}</div>
         <div>{sended}</div>
-        <Button onClick={(e) => {
+        <button className="editBtn" onClick={(e) => {
             e.preventDefault()
             toggle()
-        }}>Edit</Button>
-        <Button onClick={(e) => {
+        }}>Edit</button>
+        <button className="deleteBtn" onClick={(e) => {
             e.preventDefault()
             deleteBoulder(props.boulder.id)
 
-        }}>X</Button>
+        }}>X</button>
         </div>
         <Modal isOpen={modal} toggle={toggle}>
                 <ModalHeader toggle={toggle}>

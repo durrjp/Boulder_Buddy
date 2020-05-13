@@ -22,17 +22,18 @@ export default (props) => {
         <>
         <div className="sessionContainer">
             <div className="sessionHeadContainer">
+            <div className="dltSeshContainer">
+                <button className="dltSeshBtn" onClick={(e) => {
+                    e.preventDefault()
+                    deleteSessionFunc(props.session.id)}
+                    }>Delete Session
+
+                </button>
+            </div>
                 <div className="sessionDate">
                     {fixedDate} - <span className="sessionLocation">{props.session.location}</span>
                 </div>
-                <div className="dltSeshContainer">
-                    <button className="dltSeshBtn" onClick={(e) => {
-                        e.preventDefault()
-                        deleteSessionFunc(props.session.id)}
-                        }>Delete Session
-
-                    </button>
-                </div>
+                
             </div>
             
             <div className="sessionBoulders">

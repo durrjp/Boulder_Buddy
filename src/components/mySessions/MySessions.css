@@ -4,7 +4,6 @@
 
 .sessionContainer {
     margin-bottom: 25px;
-    padding: 10px;
     text-align: center;
     background: rgb(255, 255, 255,.5);
     margin: 20px
@@ -25,7 +24,7 @@
 }
 
 .mySessionsHeader {
-    font-size: 42px;
+    font-size: 30px;
     text-align: center;
     color: rgb(0, 0, 0,.75);
     font-weight: bold;
@@ -35,13 +34,14 @@
 .sessionDate {
     font-size: 24px;
     margin-bottom: 5px;
-    width: 70%;
+    width: 100%;
     font-weight: bold;
+    color: rgb(0, 0, 0,.7);
 
 }
 
 .sessionLocation {
-    color: #FD8D6E
+    color: rgb(255, 255, 255)
 }
 
 
@@ -51,6 +51,8 @@
     flex-flow: row wrap;
     justify-content:space-around;
     margin-bottom: 5px;
+    font-size: 14px;
+    padding-bottom: .5em
 }
 
 .boulderItem1 {
@@ -62,18 +64,20 @@
 }
 
 .boulderItem3 {
-    width: 80px;
+    width: 60px;
     font-weight: bold;
 }
 
 .boulderItem4 {
-    width: 20px
+    width: 45px
 }
 
 .editButton {
     border: none;
     background: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
+    width: 45px;
+    padding:.1em
 }
 
 .editButton:hover {
@@ -82,8 +86,9 @@
 
 .deleteButton {
     border:none;
-    background: rgba(107, 52, 17, 0.2);
+    background: rgb(116, 5, 5,.7);
     border-radius: 7px; 
+    color: white;
 }
 
 .deleteButton:hover {
@@ -93,8 +98,10 @@
 
 .sessionHeadContainer {
     display:flex;
-    justify-content: ;
-
+    flex-flow: column nowrap;
+    font-size: 24px;
+    background-color: rgb(0, 0, 0,.3);
+    margin-bottom: 10px;
 }
 .dltSeshBtn {
     border:none;
@@ -108,5 +115,4 @@
 .dltSeshContainer {
     display:flex;
     justify-content: flex-end;
-    width: 50%
 }

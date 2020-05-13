@@ -8,7 +8,12 @@ export default (props) => {
     // number of attempts for each grade vs number of sends per grade
     const {sessions} = useContext(SessionsContext)
     const {boulders} = useContext(BouldersContext)
-    const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
+    let currentUserId = ""
+    if (props.user === undefined) {
+        currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
+    } else {
+        currentUserId = props.user.id
+    }
     const currUserSessions = sessions.filter(session => session.userId === currentUserId)
     const currUserSessionIdsArray = currUserSessions.map(cus => {
         return cus.id
@@ -91,7 +96,7 @@ export default (props) => {
         <Bar
             data={state.data}
             options={{
-                maintainAspectRatio:false,
+                aspectRatio: 1,
                 scales: {
                     xAxes: [{
                         id: "bar-x-axis1",
@@ -107,7 +112,8 @@ export default (props) => {
                         },
                         stacked: true,
                         categoryPercentage: 0.5,
-                        barPercentage: 0.5},
+                        barPercentage: 0.5
+                    },
                     ],
                     yAxes: [{
                         gridLines: {
@@ -131,7 +137,7 @@ export default (props) => {
                     }
                 }
             }}
-            height={400}
+            height={500} width={340}
         />
     )
 }

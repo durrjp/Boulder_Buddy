@@ -45,7 +45,7 @@ export default ({user}) => {
         <div>{user.name}</div>
         <button onClick={toggle}>Stats</button>
         <Modal isOpen={modal} >
-            <ModalHeader toggle={toggle}>Stats
+            <ModalHeader toggle={toggle}>
             </ModalHeader>
             <ModalBody>
 
@@ -62,7 +62,7 @@ export default ({user}) => {
                 </div>
                 <div className="barGraphContainer">
                     <div className="instruct">Total Boulders Climbed</div>
-                    <BarGraph />
+                    <BarGraph user={user}/>
                 </div>
                 <div className="pieChartContainer">
                     <div className="instruct">Flash % by Grade: </div>

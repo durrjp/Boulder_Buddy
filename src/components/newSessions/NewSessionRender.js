@@ -44,13 +44,15 @@ export default (props) => {
         <>
         <div ref={newBoulderDiv} className="hidden">
             <div className="sessionLogHeader">Session Log</div>
-            <div className="instruct">New Boulder:</div>
+            <div className="instruct newSeshInstruct">New Boulder:</div>
             <form>
                 <div className="sessionRow">
                     <label htmlFor="numberOfAttempts">Number of Attempts: </label>
                     <input
                         type="number"
                         id="numberOfAttempts"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
                         ref={numberOfAttempts}
                         required
                         autoFocus
@@ -71,7 +73,7 @@ export default (props) => {
                         placeholder=""
                     />
                 </div>
-                <div className="instruct">Click Grade Below To Submit:</div>
+                <div className="instruct  newSeshInstruct">Click Grade Below To Submit:</div>
                 <div className="btnContainer">
                     {
                         arrayOfGrades.map(grades => <NewBoulderButton className="gradeBtn" constructBoulder={constructBoulder} grade={grades}/>)
@@ -79,7 +81,7 @@ export default (props) => {
                 </div>
             </form>
             <div className="newSessionLog">
-                <div className="logHeader">Log</div>
+                <div className="logHeader">Logged Boulders</div>
                 <div className="newSessionLog_boulders">
                 {
                     currentSessionBoulders.map(boulder => <CurrentSessionBoulder boulder={boulder}/>)

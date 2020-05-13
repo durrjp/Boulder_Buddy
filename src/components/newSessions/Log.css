@@ -1,5 +1,5 @@
 .sessionLogHeader {
-    font-size: 42px !important;
+    font-size: 30px !important;
     text-align: center;
     color: rgb(0, 0, 0,.75);
     font-weight: bold;
@@ -10,7 +10,7 @@
     margin: 1em 1em;
     display:flex;
     justify-content: space-between;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .checkButton {
@@ -25,7 +25,7 @@
     background: rgb(107,52,17,.2) !important;
     padding-top: 13px;
     margin: .5rem;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
 
 }
@@ -40,7 +40,7 @@
     justify-content: center;
 }
 .logHeader {
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -49,15 +49,45 @@
     justify-content: center;
 }
 .saveSessionBtn {
-    width: 150px;
-    height: 40px;
+    width: 170px;
+    height: 50px;
     font-size: 24px;
     background: rgb(107,52,17,.2);
     text-align: center;
     border-radius: 7px;
+    padding:.2em;
+    margin-top: 10px
 }
 
 .saveSessionBtn:hover {
     background-color: rgb(247, 183, 166) !important ;
+}
+
+.newSeshInstruct {
+    text-align: left;
+    font-size: 22px
+}
+
+.editBtn {
+    border: none;
+    background: rgba(107, 52, 17, 0.2);
+    border-radius: 7px;
+    padding: .2em;
+    width: 70px
+}
+
+.editBtn:hover {
+    background-color: rgb(247, 183, 166) ;
+}
+
+.deleteBtn {
+    border:none;
+    background: rgb(116, 5, 5,.7);
+    border-radius: 7px; 
+    color: #EDE6E6
+}
+
+.deleteBtn:hover {
+    background-color: rgb(247, 183, 166) ;
 }
 

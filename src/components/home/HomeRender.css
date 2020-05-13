@@ -69,8 +69,9 @@
 }
 
 .homeItem_header {
-    font-size: 30px;
-    color: #6B3411
+    font-size: 26px;
+    color: #6B3411;
+    font-weight: bold;
 }
 
 .imageLogo {

@@ -1,5 +1,5 @@
 .statsHeader {
-    font-size: 42px;
+    font-size: 30px;
     text-align: center;
     color: rgb(0, 0, 0,.75);
     font-weight: bold;
@@ -9,17 +9,18 @@
     display:flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    font-size: 24px;
+    font-size: 22px;
     margin-right: 40px;
-    margin-left: 40px
+    margin-left: 40px;
+    margin-top: 30px;
 }
 .statsHighest {
     display:flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    font-size: 24px;
+    font-size: 22px;
     margin-right: 40px;
-    margin-left: 40px
+    margin-left: 40px;
 }
 
 

@@ -4,7 +4,7 @@
     justify-content: center;
 }
 .addFriendsBtn {
-    width: 150px;
+    width: 200px;
     height: 60px;
     font-size: 28px;
     border: none;
@@ -91,6 +91,7 @@
 
 .leaderboardContainer {
     text-align: center;
+    font-size: 14px;
 }
 
 
