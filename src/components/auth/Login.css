@@ -74,7 +74,7 @@
     width:150px;
     height: 50px; 
     color: #6B3411;
-    box-shadow: 2px 2px #8a8787;
+    box-shadow: 2px 2px #8a8787, 1px 1px #8a8787 ;
     margin-bottom: 30px;
 
 }

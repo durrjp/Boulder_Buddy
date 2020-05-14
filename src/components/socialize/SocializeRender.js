@@ -11,8 +11,6 @@ import LeaderBoardItem from "./LeaderBoardItem"
 import FollowingStats from "./FollowingStats"
 import {ReactComponent as Socialize} from "../home/homeImages/friends.svg"
 
-
-
 export default () => {
     const { users, usersFollowing, setUsersFollowing, currentFollowers, setCurrentFollowers } = useContext(UserContext)
     const { follows } = useContext(FollowsContext)
@@ -81,10 +79,6 @@ export default () => {
     })
 
 
-    const top10Boulders = sortedBoulders.slice(0, 5).map((boulder => {
-        return boulder
-    }))
-
 
     const userData = []
     users.map(user => {
@@ -106,7 +100,6 @@ export default () => {
             }
             return 0
         })
-        console.log(sortedBoulders)
         if (sortedBoulders.length !== 0) {
             const highestGrade = sortedBoulders[0].grade
             const numberOfHighGradesSent = sortedBoulders.filter(boulder => boulder.grade === highestGrade)
@@ -116,7 +109,6 @@ export default () => {
                 sends: numberOfHighGradesSent.length
             }
             userData.push(object)
-            console.log(userData)
         }
     })
     const sortedUserData = userData.sort((a,b) => {
@@ -139,11 +131,10 @@ export default () => {
         }
         return 0
     })
-    console.log(sortedUserData)
     const top5Climbers = sortedUserData.slice(0, 5).map((user => {
         return user
     }))
-
+    // end
 
     // toggle for following vs. followers
     const [view, setView] = useState(false)
@@ -167,6 +158,8 @@ export default () => {
         otherWrapper.classList.toggle('selected')
 
     }
+
+    //end
 
     let counter = 0
 
