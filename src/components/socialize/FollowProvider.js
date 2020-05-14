@@ -7,7 +7,7 @@ export const FollowsProvider = (props) => {
 
 
     const getFollows = () => {
-        return fetch("https://git.heroku.com/boulder-buddy-api.git/follows", {
+        return fetch("https://boulder-buddy-api.herokuapp.com/follows", {
             method: "GET",
             headers: {
                 "cache-control":"no-cache"
@@ -18,7 +18,7 @@ export const FollowsProvider = (props) => {
     }
 
     const addFollow = follow => {
-        return fetch("https://git.heroku.com/boulder-buddy-api.git/follows", {
+        return fetch("https://boulder-buddy-api.herokuapp.com/follows", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export const FollowsProvider = (props) => {
     }
 
     const deleteFollow = followId => {
-        return fetch(`https://git.heroku.com/boulder-buddy-api.git/follows/${followId}`, {
+        return fetch(`https://boulder-buddy-api.herokuapp.com/follows/${followId}`, {
             method: "DELETE",
             headers: {
                 "cache-control":"no-cache"

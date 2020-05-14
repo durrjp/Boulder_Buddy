@@ -13,7 +13,7 @@ export const UserProvider = (props) => {
 
 
     const getUsers = () => {
-        return fetch("https://git.heroku.com/boulder-buddy-api.git/users", {
+        return fetch("https://boulder-buddy-api.herokuapp.com/users", {
             method: "GET",
             headers: {
                 "cache-control":"no-cache"
@@ -24,7 +24,7 @@ export const UserProvider = (props) => {
     }
 
     const addUser = user => {
-        return fetch("https://git.heroku.com/boulder-buddy-api.git/users", {
+        return fetch("https://boulder-buddy-api.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
