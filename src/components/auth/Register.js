@@ -1,5 +1,7 @@
 import React, { useRef } from "react"
 import "./Login.css"
+import { Link } from "react-router-dom";
+
 
 const Register = props => {
     const firstName = useRef()
@@ -55,9 +57,14 @@ const Register = props => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="registerContainer" style={{ textAlign: "center" }}>
+            <div className="closeRegBtnContainer">
+                <button className="closeRegisterBtn">
+                    <Link to="/login">Close</Link>
+                </button>
+            </div>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Boulder Buddy</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Registration Page</h1>
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>
                     <input ref={firstName} type="text"
@@ -99,8 +106,8 @@ const Register = props => {
                         required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit">
-                        Sign Up and Login
+                    <button className="registerBtn" type="submit">
+                        Register and Login
                     </button>
                 </fieldset>
             </form>

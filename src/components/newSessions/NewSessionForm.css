@@ -8,7 +8,7 @@
 }
 
 .newSessionHeader {
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
     color: rgb(0, 0, 0,.75);
     font-weight: bold;
@@ -35,10 +35,15 @@ justify-content: space-evenly;}
     width: 200px;
     height: 50px;
     font-size: 24px;
+    box-shadow: 2px 2px #8a8787;
+
 }
 
 .newSeshBtn:hover {
-    background-color: rgb(247, 183, 166) !important ;
+    box-shadow: inset 1px 1px 4px #8a8787 ;
+    transform: translateY(2px);
+    transform: translateX(2px);
+    outline: none !important
 }
 
 .buttonHolder {

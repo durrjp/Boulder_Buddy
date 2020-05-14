@@ -21,7 +21,7 @@
 }
 
 .helpModal {
-    font-size: 25px;
+    font-size: 20px;
     padding: .5em;
     background-color: rgb(223, 215, 215);
     height: 100%;
@@ -45,12 +45,19 @@
     width: 40px;
     height: 40px;
     margin-top: 25px;
-    color:black
+    color:black;
+    box-shadow: 2px 2px #141414;
+}
+
+.helpModalCloseBtn:hover {
+    box-shadow: inset 1px 1px 4px #8a8787 ;
+    transform: translateY(2px);
+    transform: translateX(2px)
 }
 
 .helpHeader {
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color:black;
     margin-left: 78px;

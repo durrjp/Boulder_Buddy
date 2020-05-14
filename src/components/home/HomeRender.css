@@ -25,10 +25,13 @@
     margin-top: 1em;
     text-align: center;
     padding-top: 45px;
+    box-shadow: 3px 3px #8a8787;
 }
 
 .homeItem:hover {
-    background-color: rgb(247, 183, 166) ;
+    box-shadow: inset 1px 1px 4px #8a8787 ;
+    transform: translateY(3px);
+    transform: translateX(3px)
 }
 
 .fading {
@@ -77,6 +80,7 @@
 .imageLogo {
     width: 228px;
     height: 125px;
+    margin-top: 5px;
 }
 
 .logoContainer {
