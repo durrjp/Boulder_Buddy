@@ -114,7 +114,7 @@ export default ({user}) => {
                     </ModalHeader>
                     <ModalBody>
                         <div className="statsHeader">Stats</div>
-                        <div>User has not logged any bouldering sessions...</div>
+                        <div>User has not logged any sessions...</div>
                     </ModalBody>
                 </Modal>
             </div>

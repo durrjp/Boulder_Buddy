@@ -4,9 +4,9 @@
     justify-content: center;
 }
 .addFriendsBtn {
-    width: 170px;
-    height: 60px;
-    font-size: 24px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
     border: none;
     background-color: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
@@ -58,7 +58,7 @@
     background: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
     height: 50px;
-    width: 75px;
+    width: 90px;
     border: none
 }
 
@@ -72,14 +72,14 @@
 }
 
 .followingContainer {
-    height: 300px;
+    height: 290px;
     overflow-y: scroll;
     margin: 1em;
     justify-content: center;
 }
 
 .followersContainer {
-    height: 300px;
+    height: 290px;
     overflow-y: scroll;
     margin: 1em
 
@@ -135,15 +135,6 @@
 }
 
 
-table,th,td {
-    margin:auto;
-    padding: .1em;
-}
-
-td,th {
-    padding:.3em
-}
-
 .filled {
     background-color: rgb(247, 229, 130) ;
 }
@@ -151,6 +142,7 @@ td,th {
 .tableHeader {
     font-size:24px;
     font-weight: bold;
+    color:black
 
 }
 .friend_Icon {

@@ -1,14 +1,13 @@
 import React, {useState, useContext, useEffect, useRef} from "react"
 import { Modal, ModalHeader, ModalBody } from "reactstrap"
 import "./Socialize.css"
+import "./Table.css"
 import FindFriendsList from "./FindFriendsList"
 import { UserContext } from "../users/UserProvider"
 import { FollowsContext} from "./FollowProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import { SessionsContext } from "../mySessions/SessionProvider"
 import LeaderBoardItem from "./LeaderBoardItem"
-import FollowingRender from "./FollowingRender"
-import FollowersRender from "./FollowersRender"
 import FollowingStats from "./FollowingStats"
 import {ReactComponent as Socialize} from "../home/homeImages/friends.svg"
 
@@ -58,9 +57,7 @@ export default () => {
     },[follows, users])
     
     //sorting the boulders highest to lowest
-    const bouldersSent = boulders.filter(boulder => boulder.sent === true)
-    const sortedArray= bouldersSent.sort((a,b) => b.grade - a.grade)
-    
+    const bouldersSent = boulders.filter(boulder => boulder.sent === true)    
     
     const sortedBoulders = bouldersSent.sort((a,b) => {
         var gradeA = a.grade
@@ -88,30 +85,67 @@ export default () => {
         return boulder
     }))
 
-    let counter = 0
-    // controlling home vs. stats
-    const [activeList, setActiveList] = useState("following")
-    const [components, setComponents] = useState()
 
-    const showHome = () => (
-        <FollowingRender usersFollowing={usersFollowing} />
-    )
-
-    const showStats = () => (
-        <FollowersRender currentFollowers={currentFollowers}/>
-        )
-
-    useEffect(() => {
-        if (activeList === "home") {
-            setComponents(showHome)
+    const userData = []
+    users.map(user => {
+        const userSessions = sessions.filter(session => session.userId === user.id)
+        const arrayOfBoulders = userSessions.map(session => {
+            return boulders.filter(boulder => boulder.sessionId === session.id)
+        })
+        const flatBouldersArray = arrayOfBoulders.flat()
+        const sentFlatBoudlersArray = flatBouldersArray.filter(boulder => boulder.sent === true)
+        const sortedBoulders = sentFlatBoudlersArray.sort((a,b) => {
+            var gradeA = a.grade
+            var gradeB = b.grade
+            
+            if (gradeA > gradeB) {
+                return -1
+            }
+            if (gradeA < gradeB) {
+                return 1
+            }
+            return 0
+        })
+        console.log(sortedBoulders)
+        if (sortedBoulders.length !== 0) {
+            const highestGrade = sortedBoulders[0].grade
+            const numberOfHighGradesSent = sortedBoulders.filter(boulder => boulder.grade === highestGrade)
+            const object = {
+                userName: user.name,
+                highestGrade: highestGrade,
+                sends: numberOfHighGradesSent.length
+            }
+            userData.push(object)
+            console.log(userData)
         }
-        if (activeList === "followers") {
-            setComponents(showStats)
+    })
+    const sortedUserData = userData.sort((a,b) => {
+        var highestGradeA = a.highestGrade
+        var highestGradeB = b.highestGrade
+        var sendsA = a.sends
+        var sendsB = b.sends
+        
+        if (highestGradeA > highestGradeB) {
+            return -1
         }
-    }, [activeList])
+        if (highestGradeA < highestGradeB) {
+            return 1
+        }
+        if (sendsA > sendsB) {
+            return -1
+        }
+        if (sendsA < sendsB) {
+            return 1
+        }
+        return 0
+    })
+    console.log(sortedUserData)
+    const top5Climbers = sortedUserData.slice(0, 5).map((user => {
+        return user
+    }))
 
-    //end control
 
+    // toggle for following vs. followers
     const [view, setView] = useState(false)
     const toggleView = () => setView(!view)
 
@@ -134,6 +168,8 @@ export default () => {
 
     }
 
+    let counter = 0
+
     return (
             <>
         <div className="leaderboardContainer">
@@ -143,19 +179,16 @@ export default () => {
                     <tr>
                         <th>Rank:</th>
                         <th>Climber:</th>
-                        <th>Grade:</th>
-                        <th>Attempts:</th>
-                        <th>Location:</th>
+                        <th>Highest Grade:</th>
+                        <th>Sends:</th>
                     </tr>
                 </thead>
                 <tbody>
             {
-                top10Boulders.map(boulder=> {
-                    const currSesh = sessions.find(session => session.id === boulder.sessionId) || {}
-                    const currUser = users.find(user => user.id === currSesh.userId) || {}
+                top5Climbers.map(user=> {
                     counter+=1
                     return (
-                    <LeaderBoardItem counter={counter} boulder={boulder} currSesh={currSesh} currUser={currUser} />
+                    <LeaderBoardItem counter={counter} user={user}/>
                     )
 
                 })
