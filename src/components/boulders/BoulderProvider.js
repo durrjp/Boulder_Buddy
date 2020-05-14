@@ -7,7 +7,7 @@ export const BouldersProvider = (props) => {
 
 
     const getBoulders = () => {
-        return fetch("http://localhost:8080/boulders", {
+        return fetch("https://git.heroku.com/boulder-buddy-api.git/boulders", {
             method: "GET",
             headers: {
                 "cache-control":"no-cache"
@@ -18,7 +18,7 @@ export const BouldersProvider = (props) => {
     }
 
     const addBoulder = boulder => {
-        return fetch("http://localhost:8080/boulders", {
+        return fetch("https://git.heroku.com/boulder-buddy-api.git/boulders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export const BouldersProvider = (props) => {
     }
 
     const updateBoulder = boulder => {
-        return fetch(`http://localhost:8080/boulders/${boulder.id}`, {
+        return fetch(`https://git.heroku.com/boulder-buddy-api.git/boulders/${boulder.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export const BouldersProvider = (props) => {
     }
 
     const deleteBoulder = boulderId => {
-        return fetch(`http://localhost:8080/boulders/${boulderId}`, {
+        return fetch(`https://git.heroku.com/boulder-buddy-api.git/boulders/${boulderId}`, {
             method: "DELETE",
             headers: {
                 "cache-control":"no-cache"
