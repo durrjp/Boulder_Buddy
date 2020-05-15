@@ -10,6 +10,10 @@ body {
     color:black
 }
 
+.placeholer {
+    display: none
+}
+
 .App {
     max-height: 736px;
     width: 414px;
