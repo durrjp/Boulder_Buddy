@@ -11,7 +11,7 @@ const Register = props => {
     const verifyPassword = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:8080/users?email=${email.current.value}`)
+        return fetch(`https://boulder-buddy-api.herokuapp.com/users?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => {
                 if (user.length) {
@@ -29,7 +29,7 @@ const Register = props => {
                 existingUserCheck()
                 .then((result) => {
                     if (result) {
-                    fetch("http://localhost:8080/users", {
+                    fetch("https://boulder-buddy-api.herokuapp.com/users", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
