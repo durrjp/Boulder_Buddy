@@ -8,7 +8,7 @@ export const SessionsProvider = (props) => {
 
 
     const getSessions = () => {
-        return fetch("https://boulder-buddy-api.herokuapp.com//sessions", {
+        return fetch("https://boulder-buddy-api.herokuapp.com/sessions", {
             method: "GET",
             headers: {
                 "cache-control":"no-cache"
@@ -20,7 +20,7 @@ export const SessionsProvider = (props) => {
 
 
     const addSession = session => {
-        return fetch("https://boulder-buddy-api.herokuapp.com//sessions", {
+        return fetch("https://boulder-buddy-api.herokuapp.com/sessions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -37,7 +37,7 @@ export const SessionsProvider = (props) => {
     }
 
     const updateSession = session => {
-        return fetch(`https://boulder-buddy-api.herokuapp.com//sessions/${session.id}`, {
+        return fetch(`https://boulder-buddy-api.herokuapp.com/sessions/${session.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const SessionsProvider = (props) => {
     }
 
     const deleteSession = sessionId => {
-        return fetch(`https://boulder-buddy-api.herokuapp.com//sessions/${sessionId}`, {
+        return fetch(`https://boulder-buddy-api.herokuapp.com/sessions/${sessionId}`, {
             method: "DELETE",
             headers: {
                 "cache-control":"no-cache"
