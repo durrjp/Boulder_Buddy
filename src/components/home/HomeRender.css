@@ -7,6 +7,7 @@
     display:flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+    
 }
 
 .homeRow2 {
@@ -17,14 +18,14 @@
 
 .homeItem {
     width: 179px;
-    height: 228px;
+    height: 228px !important;
     left: 216px;
     top: 101px;
     background: rgba(107, 52, 17, 0.2);
     border-radius: 7px;
     margin-top: 1em;
     text-align: center;
-    padding-top: 45px;
+    padding-top: 52px;
     box-shadow: 3px 3px #8a8787;
 }
 
@@ -32,29 +33,6 @@
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(3px);
     transform: translateX(3px)
-}
-
-.fading {
-    -webkit-animation-duration: 1s;
-    -webkit-animation-name: fading;
-    animation-duration: .5s;
-    animation-name: fading;
-}
-@-webkit-keyframes fading {
-    from {
-        color: blue;
-    }
-    to {
-        color: black;
-    }
-}
-@keyframes fading {
-    from {
-        color: blue;
-    }
-    to {
-        color: black;
-    }
 }
 
 .homeHeader {

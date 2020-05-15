@@ -18,17 +18,16 @@
 }
 
 .form-control {
-    height: 3em;
-    padding: .375rem .75rem;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.5;
+    padding: .8em;
+    font-size: 20px;
     color: #495057;
     background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
     border-radius: .25rem;
     margin:auto;
+}
+
+.loginInfoItemContainer {
+    margin: .2em
 }
 
 .container--login {
@@ -69,6 +68,7 @@
 
 .signInButton {
     background: rgba(107, 52, 17, 0.2);
+    font-size: 24px;
     border: none;
     border-radius: 7px;
     width:150px;
@@ -95,11 +95,12 @@
     background: rgba(107, 52, 17, 0.2);
     border: none;
     border-radius: 7px;
-    width:150px;
+    width:250px;
     height: 50px; 
     color: #6B3411;
     box-shadow: 2px 2px #8a8787;
     margin-top: 30px;
+    font-size: 24px;
 }
 
 .registerBtn:hover {
@@ -121,10 +122,27 @@
     color: #6B3411 !important;
     box-shadow: 2px 2px #8a8787;
     margin-top: 20px;
+    margin-right: 20px;
+    font-size: 20px;
 }
 
 .closeRegisterBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
     transform: translateX(2px)
+}
+
+.registerInputContainer {
+    display:flex;
+    width:100%;
+    margin-bottom: 1em;
+}
+
+label {
+    width: 160px;
+    text-align: end;
+}
+
+input {
+    width:40%
 }

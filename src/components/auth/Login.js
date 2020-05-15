@@ -61,26 +61,26 @@ const Login = props => {
                         <img className="loginLogo" src={loginLogo} alt="Logo"/>
                     </div>
                     <div className="loginInfoContainer">
-                        <fieldset>
+                        <div className="loginInfoItemContainer">
                             <input ref={email} type="email"
                                 id="email"
                                 className="form-control"
                                 placeholder="Email address"
                                 required autoFocus />
-                        </fieldset>
-                        <fieldset>
+                        </div>
+                        <div className="loginInfoItemContainer">
                             <input ref={password} type="password"
                                 id="password"
                                 className="form-control"
                                 placeholder="Password"
                                 required />
-                        </fieldset>
+                        </div>
                         <br></br>
-                        <fieldset>
+                        <div>
                             <button className="signInButton"type="submit">
                                 Sign in
                             </button>
-                        </fieldset>
+                        </div>
                     </div>
                 </form>
             </section>

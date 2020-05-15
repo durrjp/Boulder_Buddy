@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import "./Socialize.css"
-import { UserContext } from "../users/UserProvider"
 import FollowingStats from "./FollowingStats"
-import { Modal, ModalHeader, ModalBody } from "reactstrap"
 
 export default ({ usersFollowing}) => {
 
