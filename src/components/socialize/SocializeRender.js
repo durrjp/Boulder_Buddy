@@ -197,7 +197,6 @@ export default () => {
                     handleColorChange()
                     toggleView()
                 }
-                // setActiveList("following")
             }}>Following</button>
             <button ref={followersBtn} className="followersTogBtn"  onClick={(e) => {
                 e.preventDefault()
@@ -206,10 +205,8 @@ export default () => {
                     handleColorChange()
                     toggleView()
                 }
-                // setActiveList("followers")
             }}>Followers</button>
         </div>
-        {/* {components} */}
         <div ref={followingRef} className="followingContainer">
                 <div className="following"><span className="total">Total:</span> {usersFollowing.length}</div>
                 <div className="followingList">

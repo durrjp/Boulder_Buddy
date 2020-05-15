@@ -21,7 +21,7 @@
     height: 228px !important;
     left: 216px;
     top: 101px;
-    background: rgba(107, 52, 17, 0.2);
+    background: rgb(223, 201, 184);
     border-radius: 7px;
     margin-top: 1em;
     text-align: center;
@@ -38,7 +38,7 @@
 .homeHeader {
     text-align: center;
     font-weight: bold;
-    color: rgb(0, 0, 0,.75);
+    color: rgba(44, 44, 44);
     text-shadow: 2px 3px rgb(107, 100, 100,.3);
 
 }

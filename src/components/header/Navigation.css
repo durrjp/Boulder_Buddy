@@ -1,8 +1,10 @@
 .topNav {
-    flex-basis: 100%;
     display: flex;
     color: white;
     height: 7vh;
+    background-color: transparent;
+    justify-content: center;
+    margin-left: 112px;
 }
 
 svg {
@@ -10,11 +12,11 @@ svg {
 }
 
 .leftNav {
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    z-index: 10;
     height: auto;
     width: 414px;
-    background-color: #EDE6E6;
+    background-color:#EDE6E6 ;
 }
 
 .lineDiv {

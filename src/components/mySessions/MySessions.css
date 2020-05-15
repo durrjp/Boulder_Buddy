@@ -6,7 +6,8 @@
     margin-bottom: 25px;
     text-align: center;
     background: rgb(255, 255, 255,.5);
-    margin: 20px
+    margin: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sessionTitle {
@@ -76,7 +77,7 @@
 
 .editButton {
     border: none;
-    background: rgba(107, 52, 17, 0.2);
+    background: rgb(223, 201, 184);
     border-radius: 7px;
     width: 45px;
     padding:.1em;

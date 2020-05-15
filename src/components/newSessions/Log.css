@@ -24,7 +24,7 @@
     height: 65px;
     text-align: center;
     border-radius: 7px;
-    background: rgb(107,52,17,.2) !important;
+    background: rgb(223, 201, 184) !important;
     padding-top: 13px;
     margin: .5rem;
     font-size: 20px;
@@ -48,6 +48,7 @@
 .logHeader {
     font-size: 30px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .submitSession {
@@ -58,7 +59,7 @@
     width: 170px;
     height: 50px;
     font-size: 24px;
-    background: rgb(107,52,17,.2);
+    background: rgb(223, 201, 184);
     text-align: center;
     border-radius: 7px;
     padding:.2em;
@@ -80,7 +81,7 @@
 
 .editBtn {
     border: none;
-    background: rgba(107, 52, 17, 0.2);
+    background: rgb(223, 201, 184);
     border-radius: 7px;
     padding: .2em;
     width: 70px;
@@ -101,6 +102,8 @@
     border-radius: 7px; 
     color: #EDE6E6;
     box-shadow: 1px 1px #8a8787;
+    width: 40px;
+    text-align: center;
 
 }
 
@@ -110,3 +113,28 @@
     transform: translateX(1px)
 }
 
+.newSessionLog {
+    background-color: white;
+    padding: 1em;
+    margin: 20px 20px 0 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
+}
+
+.editBtnContainer {
+    text-align: center;
+}
+
+.saveEditBtn {
+    border: none;
+    background: rgb(223, 201, 184);
+    border-radius: 7px;
+    padding: .2em;
+    width: 100px;
+    box-shadow: 1px 1px #8a8787;
+}
+
+.saveEditBtn {
+    box-shadow: inset 1px 1px 4px #8a8787 ;
+    transform: translateY(1px);
+    transform: translateX(1px)
+}

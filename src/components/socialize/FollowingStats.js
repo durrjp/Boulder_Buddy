@@ -58,7 +58,7 @@ export default ({user}) => {
                 <Socialize className="friend_Icon"/>
                 <div className="friendName">{user.name}</div>
                 <button className="friendStatsBtn" onClick={toggle}>Stats</button>
-                <Modal isOpen={modal} >
+                <Modal className="friendStatsModal" isOpen={modal} >
                     <ModalHeader toggle={toggle}>
                     </ModalHeader>
                     <ModalBody>

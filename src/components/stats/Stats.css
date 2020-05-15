@@ -44,6 +44,7 @@
     justify-content: center;
     padding-top: 2em;
     padding-bottom: 2em;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
 }
 
 .pieChartContainer {
@@ -52,6 +53,8 @@
     border-radius: 7px;
     padding-top: 2em;
     padding-bottom: 2em;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
+
 }
 
 .totalHeader {

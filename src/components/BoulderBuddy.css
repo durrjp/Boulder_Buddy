@@ -21,6 +21,20 @@ body {
     height: 736px;
     overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 1;
+    fill: none;
+    background-color: transparent;
+    
+}
+
+.renderComponents {
+    top: 60px;
+    margin-top: auto;
+    position: relative;
+}
+
+.contentContainer {
+    margin-top: -140px;
 }
 
 .mainContainer::-webkit-scrollbar {
@@ -38,9 +52,7 @@ body {
     flex-flow: row nowrap;
 }
 
-.renderComponents {
-    margin-top: 60px
-}
+
 
 .expandable {
     transition: all 2s ease-in-out;

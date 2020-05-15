@@ -90,13 +90,15 @@ export default ({boulder, toggle}) => {
                     />
                 </div>
             </fieldset>
-            <button type="submit" className="btn btn-primary"
-                onClick={evt => {
-                    evt.preventDefault()
-                    editBoulder()
-                }}>
-                Save Edit
-            </button>
+            <div className="editBtnContainer">
+                <button type="submit" className="saveEditBtn"
+                    onClick={evt => {
+                        evt.preventDefault()
+                        editBoulder()
+                    }}>
+                    Save Edit
+                </button>
+            </div>
         </form>
     </>
     )

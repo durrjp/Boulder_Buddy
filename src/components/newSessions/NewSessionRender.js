@@ -87,12 +87,12 @@ export default (props) => {
                     currentSessionBoulders.map(boulder => <CurrentSessionBoulder boulder={boulder}/>)
                 }
                 </div>
-            </div>
-            <div className="submitSession">
-                <div className="saveSessionBtn" onClick={(evt) =>{
-                    evt.preventDefault()
-                    props.setActiveList("mySessions")
-                }}>Save Session</div>
+                <div className="submitSession">
+                    <div className="saveSessionBtn" onClick={(evt) =>{
+                        evt.preventDefault()
+                        props.setActiveList("mySessions")
+                    }}>Save Session</div>
+                </div>
             </div>
         </div>
         <div ref={newSessionDiv}>
