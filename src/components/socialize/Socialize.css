@@ -8,16 +8,19 @@
     height: 50px;
     font-size: 20px;
     border: none;
-    background-color: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border-radius: 7px;
     box-shadow: 2px 2px #8a8787;
+    font-weight: bold;
 
 }
 
 .addFriendsBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
-    transform: translateX(2px)
+    transform: translateX(2px);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
+
 }
 
 .findFriendsHeader {
@@ -59,18 +62,21 @@
 }
 
 .followButton {
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border-radius: 7px;
     height: 50px;
     width: 90px;
     border: none;
     box-shadow: 2px 2px #8a8787;
+    font-weight: bold;
 }
 
 .followButton:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
-    transform: translateX(2px)
+    transform: translateX(2px);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
+
 }
 
 .follows {
@@ -109,6 +115,7 @@
 .followerRow {
     display: flex;
     justify-content: center;
+    align-items: top;
 }
 
 .followingStatsContainer {
@@ -128,19 +135,22 @@
 }
 
 .friendStatsBtn {
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border:none;
     border-radius: 7px;
     padding:.3em;
     width: 100px;
     box-shadow: 2px 2px #8a8787;
+    font-weight: bold;
 
 }
 
 .friendStatsBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
-    transform: translateX(2px)
+    transform: translateX(2px);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
+
 }
 
 .leaderboardContainer {
@@ -176,25 +186,27 @@
 }
 
 .followingTogBtn {
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border: none;
-    font-size:24px;
+    font-size:20px;
     width: 40%;
     box-shadow: 2px 2px #8a8787;
     border-radius: 7px;
-    outline: none
+    outline: none;
+    font-weight: bold;
 
 
 }
 
 .followersTogBtn {
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border:none;
-    font-size:24px;
+    font-size:20px;
     width: 40%;
     border-radius: 7px;
     box-shadow: 2px 2px #8a8787;
-    outline: none
+    outline: none;
+    font-weight: bold;
 
 
 }
@@ -204,7 +216,7 @@
     transform: translateY(2px);
     transform: translateX(2px);
     outline: none !important;
-    background-color: rgb(235, 189, 176)
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
 }
 
 .noStats {
@@ -213,4 +225,16 @@
 
 .friendStatsModal .modal-content {
     background-color: #EDE6E6 !important ;
+}
+
+.dltFriendBtn {
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(158.22deg, #F0ECEC 0%, rgb(169, 21, 11,.5) 30%);
+    box-shadow: 2px 2px #8a8787;
+    color:#EDE6E6;
+    margin-left: 10px;
+    width: 50px;
+    outline: none;
+    font-weight: bold;
 }

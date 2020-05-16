@@ -19,10 +19,11 @@
 }
 
 .sessionDeleteBtn {
-    background-color: rgba(107, 52, 17, 0.2);
+    background: linear-gradient(158.22deg, #F0ECEC 0%, rgb(169, 21, 11,.5) 30%);
     border:none;
     border-radius: 7px;
     box-shadow: 1px 1px #8a8787;
+    font-weight: bold;
 
 }
 
@@ -77,11 +78,12 @@
 
 .editButton {
     border: none;
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border-radius: 7px;
     width: 45px;
     padding:.1em;
     box-shadow: 1px 1px #8a8787;
+    font-weight: bold;
 
 }
 
@@ -93,10 +95,11 @@
 
 .deleteButton {
     border:none;
-    background: rgb(116, 5, 5,.7);
+    background: linear-gradient(158.22deg, #F0ECEC 0%, rgb(169, 21, 11,.5) 30%);
     border-radius: 7px; 
     color: white;
     box-shadow: 1px 1px #8a8787;
+    font-weight: bold;
 }
 
 .deleteButton:hover {
@@ -115,12 +118,13 @@
 }
 .dltSeshBtn {
     border:none;
-    background: rgb(116, 5, 5,.7);
+    background: linear-gradient(158.22deg, #F0ECEC 0%, rgb(169, 21, 11,.5) 30%);
     border-radius: 7px; 
-    color:white;
+    color:#EDE6E6;
     height: 25px;
     font-size: 14px;
     box-shadow: 1px 1px #555252;
+    font-weight: bold;
 
 }
 

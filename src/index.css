@@ -2,5 +2,8 @@
     font-family: 'Open Sans', sans-serif;
     color: #6B3411;
 }
+*button {
+    font-weight: bold;
+}
 
 

@@ -21,14 +21,14 @@
 
 .form-group {
     display: flex;
-justify-content: space-evenly;}
+    justify-content: space-evenly;}
 
 .form-control {
     width: 200px !important
 }
 
 .newSeshBtn {
-    background-color: rgb(223, 201, 184) !important;
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%) !important;
     color: #6B3411;
     border:none;
     border-radius: 7px;
@@ -36,6 +36,7 @@ justify-content: space-evenly;}
     height: 50px;
     font-size: 24px;
     box-shadow: 2px 2px #8a8787;
+    font-weight: bold;
 
 }
 

@@ -24,12 +24,13 @@
     height: 65px;
     text-align: center;
     border-radius: 7px;
-    background: rgb(223, 201, 184) !important;
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%) !important;
     padding-top: 13px;
     margin: .5rem;
     font-size: 20px;
     font-weight: bold;
     box-shadow: 2px 2px #8a8787;
+    font-weight: bold;
 
 
 }
@@ -59,12 +60,13 @@
     width: 170px;
     height: 50px;
     font-size: 24px;
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     text-align: center;
     border-radius: 7px;
     padding:.2em;
     margin-top: 10px;
     box-shadow: 2px 2px #8a8787;
+    font-weight: bold;
 
 }
 
@@ -81,11 +83,12 @@
 
 .editBtn {
     border: none;
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border-radius: 7px;
     padding: .2em;
     width: 70px;
     box-shadow: 1px 1px #8a8787;
+    font-weight: bold;
 
 }
 
@@ -104,6 +107,7 @@
     box-shadow: 1px 1px #8a8787;
     width: 40px;
     text-align: center;
+    font-weight: bold;
 
 }
 
@@ -126,14 +130,14 @@
 
 .saveEditBtn {
     border: none;
-    background: rgb(223, 201, 184);
+    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
     border-radius: 7px;
     padding: .2em;
     width: 100px;
     box-shadow: 1px 1px #8a8787;
 }
 
-.saveEditBtn {
+.saveEditBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(1px);
     transform: translateX(1px)

@@ -8,13 +8,16 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap"
 import "../BoulderBuddy.css"
 import "./Socialize.css"
 import {ReactComponent as Socialize} from "../home/homeImages/friends.svg"
+import { FollowsContext } from "./FollowProvider"
 
 
 export default ({user}) => {
     const [pieGrade, setPieGrade] = useState(0)
     const {sessions} = useContext(SessionsContext)
     const {boulders} = useContext(BouldersContext)
+    const {deleteFollow,follows} =useContext(FollowsContext)
     const dropDownValue = useRef(0)
+    const currentUserId = parseInt(localStorage.getItem("boulderbuddy_user"))
     let currUserSessions = []
     currUserSessions = sessions.filter(session => session.userId === user.id)
     const currUserSessionIdsArray = currUserSessions.map(cus => {
@@ -51,6 +54,18 @@ export default ({user}) => {
     const filteredSessions = sessions.filter(session => {
         return session.userId === user.id
     })
+
+    const followRelationship = follows.find(follow => {
+        return currentUserId === follow.userId && follow.userFollowingId === user.id
+    })
+
+
+    const deleteTheFollow = () => {
+        deleteFollow(followRelationship.id)
+    }
+
+
+
     if(filteredSessions.length !== 0) {
         return (
             <>
@@ -58,6 +73,7 @@ export default ({user}) => {
                 <Socialize className="friend_Icon"/>
                 <div className="friendName">{user.name}</div>
                 <button className="friendStatsBtn" onClick={toggle}>Stats</button>
+                <button className="dltFriendBtn" onClick={deleteTheFollow}>X</button>
                 <Modal className="friendStatsModal" isOpen={modal} >
                     <ModalHeader toggle={toggle}>
                     </ModalHeader>
@@ -109,6 +125,7 @@ export default ({user}) => {
                 <Socialize className="friend_Icon"/>
                 <div className="friendName">{user.name}</div>
                 <button className="friendStatsBtn noStats" onClick={toggleNoStatsModal}>Stats</button>
+                <button className="dltFriendBtn" onClick={deleteTheFollow}>X</button>
                 <Modal isOpen={noStatsModal} >
                     <ModalHeader toggle={toggleNoStatsModal}>
                     </ModalHeader>
