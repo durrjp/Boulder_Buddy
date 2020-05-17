@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import NavToggleButton from './NavToggleButton'
 import "./Navigation.css"
 
-const TopNav =  ({toggleNav}) => {
+const TopNav =  ({handleClick, toggleNav}) => {
     const wrapperRef = useRef("")
 
     return (
@@ -10,6 +10,7 @@ const TopNav =  ({toggleNav}) => {
         
         <div ref={wrapperRef} className="menuButtonContainer" onClick={()=> {
             toggleNav()
+            handleClick()
         }}>
             <NavToggleButton />
         </div>

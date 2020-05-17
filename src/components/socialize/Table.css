@@ -9,10 +9,13 @@ table{
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5)
 
 }
+th {
 
-th,tr,td {
-    color:white;
-    font-size: 13px
+  color:#EDE6E6;
+}
+tr,td {
+    color:#EDE6E6;
+    font-size: 13.5px
 }
 
 tr{

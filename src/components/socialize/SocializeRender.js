@@ -13,7 +13,7 @@ import {ReactComponent as Socialize} from "../home/homeImages/friends.svg"
 
 export default () => {
     const { users, usersFollowing, setUsersFollowing, currentFollowers, setCurrentFollowers } = useContext(UserContext)
-    const { follows } = useContext(FollowsContext)
+    const { follows, deleteFollow } = useContext(FollowsContext)
     const { boulders } = useContext(BouldersContext)
     const { sessions } = useContext(SessionsContext)
     const followersRef = useRef()
@@ -226,10 +226,18 @@ export default () => {
             <div className="followersList">
                 {
                     currentFollowers.map(user => {
+                        const followRelationship = follows.find(follow => {
+                            return user.id === follow.userId && follow.userFollowingId === currentUserId
+                        })
+
+                        const deleteTheFollow = () => {
+                            deleteFollow(followRelationship.id)
+                        }
                         return (
-                        <div className="followerRow">
+                        <div className="followingStatsContainer">
                             <Socialize className="friend_Icon"/>
                             <div className="friendName">{user.name}</div>
+                            <button className="blockUserBtn" onClick={deleteTheFollow}>Block</button>
                         </div>
                         )
                     })

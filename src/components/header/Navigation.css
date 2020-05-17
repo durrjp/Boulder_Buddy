@@ -16,7 +16,9 @@ svg {
     z-index: 10;
     height: auto;
     width: 414px;
-    background-color:#EDE6E6 ;
+    font-weight: bold;
+    color: #6B3411;
+    background: #F49F84;
 }
 
 .lineDiv {
@@ -32,11 +34,13 @@ svg {
     font-size: 30px;
     color: rgb(0, 0, 0,.8);
     text-align: center;
+    padding: .2em
 
 }
 
 .leftNavItem:hover {
-    background-color: rgb(247, 183, 166);;
+    background-color: #EDE6E6;
+    text-shadow: none;
 }
 
 .menuButtonContainer {
@@ -48,9 +52,11 @@ svg {
     margin-left: 72px;
 }
 .menuButtonContainerRight {
-    padding: 2vh;
+    width:100%;
+    height:40px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .nav__dashboard {
     margin: 5vh 0;
@@ -60,5 +66,20 @@ svg {
     justify-content: flex-start;
 }
 
+.Home {
+    color:#EDE6E6;
+}
+
+.Home:hover {
+    color:black
+}
+
+.shaded {
+    background-color: #EDE6E6;
+}
+
+.shade:hover {
+    background-color: #EDE6E6;
+}
 
 

@@ -24,21 +24,20 @@
     height: 65px;
     text-align: center;
     border-radius: 7px;
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%) !important;
+    background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
     padding-top: 13px;
     margin: .5rem;
     font-size: 20px;
     font-weight: bold;
     box-shadow: 2px 2px #8a8787;
-    font-weight: bold;
-
-
+    outline: none;
 }
 
 .gradeBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
-    transform: translateX(2px)
+    transform: translateX(2px);
+    outline: none;
 }
 
 .btnContainer {
@@ -60,20 +59,21 @@
     width: 170px;
     height: 50px;
     font-size: 24px;
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
+    background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
     text-align: center;
     border-radius: 7px;
     padding:.2em;
     margin-top: 10px;
     box-shadow: 2px 2px #8a8787;
     font-weight: bold;
-
+    outline: none;
 }
 
 .saveSessionBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
-    transform: translateX(2px)
+    transform: translateX(2px);
+    outline: none;
 }
 
 .newSeshInstruct {
@@ -83,13 +83,13 @@
 
 .editBtn {
     border: none;
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
+    background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
     border-radius: 7px;
     padding: .2em;
     width: 70px;
     box-shadow: 1px 1px #8a8787;
     font-weight: bold;
-
+    outline: none;
 }
 
 
@@ -97,6 +97,7 @@
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(1px);
     transform: translateX(1px);
+    outline: none;
 }
 
 .deleteBtn {
@@ -108,13 +109,14 @@
     width: 40px;
     text-align: center;
     font-weight: bold;
-
+    outline: none;
 }
 
 .deleteBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(1px);
-    transform: translateX(1px)
+    transform: translateX(1px);
+    outline: none;
 }
 
 .newSessionLog {
@@ -130,15 +132,17 @@
 
 .saveEditBtn {
     border: none;
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
+    background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
     border-radius: 7px;
     padding: .2em;
     width: 100px;
     box-shadow: 1px 1px #8a8787;
+    outline: none;
 }
 
 .saveEditBtn:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(1px);
-    transform: translateX(1px)
+    transform: translateX(1px);
+    outline: none;
 }

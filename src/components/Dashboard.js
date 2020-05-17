@@ -24,8 +24,10 @@ import "./header/Navigation.css"
 const Dashboard = (props) => {
     const [activeList, setActiveList] = useState("home")
     const [components, setComponents] = useState()
-    
+    const allComponentsDiv = useRef()
+
     const [showLeftNav, setShowLeftNav] = useState(false)
+
     const toggleNav = () => {
         setShowLeftNav(!showLeftNav)
     }
@@ -96,11 +98,17 @@ const Dashboard = (props) => {
         }
     }, [activeList])
 
+    const handleClick = () => {
+        const wrapper = allComponentsDiv.current
+        wrapper.classList.toggle('blurry')
+
+    }
+
     return (
         <>
             <div className="mainContainer">
                 <svg width="150" height="150" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="-11" cy="-11" r="125" fill="url(#paint0_linear)" fillOpacity="0.3"/>
+                    <circle cx="-11" cy="-11" r="120" fill="url(#paint0_linear)" fillOpacity="0.2"/>
                     <circle cx="5" cy="4" r="70" fill="#EADA8A" fillOpacity="0.5"/>
                     <circle cx="-3" r="50" fill="#FD8D6E" fillOpacity="0.5"/>
                     <defs>
@@ -113,7 +121,7 @@ const Dashboard = (props) => {
                 <div className="contentContainer">
                     <DataStore>
                         <div className="headerContainer">
-                            <TopNav toggleNav={toggleNav} />
+                            <TopNav handleClick={handleClick} toggleNav={toggleNav} />
                             <Link className="logoutLink"
                                 onClick={e => {
                                     e.preventDefault()
@@ -124,8 +132,10 @@ const Dashboard = (props) => {
                             <HelpIcon className="helpIcon" onClick={toggleHelp}/>
                         </div>
                         <div className="renderComponents">
-                            <LeftNav className="expandable" toggleNav={toggleNav} showLeftNav={showLeftNav} setActiveList={setActiveList} />
-                            {components}
+                            <LeftNav className="expandable" handleClick={handleClick} toggleNav={toggleNav} showLeftNav={showLeftNav} setActiveList={setActiveList} />
+                            <div ref={allComponentsDiv}>
+                                {components}
+                            </div>
                         </div>
                         <Modal isOpen={showHelp}>
                             <HelpPage toggleHelp={toggleHelp}/>

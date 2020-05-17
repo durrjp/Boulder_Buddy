@@ -60,11 +60,11 @@ const Register = props => {
         <main className="registerContainer" style={{ textAlign: "center" }}>
             <div className="closeRegBtnContainer">
                 <button className="closeRegisterBtn">
-                    <Link to="/login">Close</Link>
+                    <Link style={{color: "#6B3411"}} to="/login">Close</Link>
                 </button>
             </div>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Registration Page</h1>
+                <h1 className="registerHeader">Registration Page</h1>
                 <div className="registerInputContainer">
                     <label htmlFor="firstName"> First Name </label>
                     <input ref={firstName} type="text"

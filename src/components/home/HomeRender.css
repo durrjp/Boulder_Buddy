@@ -21,18 +21,20 @@
     height: 228px !important;
     left: 216px;
     top: 101px;
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(231, 206, 186) 59.58%);
+    background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
     border-radius: 7px;
     margin-top: 1em;
     text-align: center;
     padding-top: 52px;
     box-shadow: 3px 3px #8a8787;
+    outline: none;
 }
 
 .homeItem:hover {
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(3px);
-    transform: translateX(3px)
+    transform: translateX(3px);
+    outline: none;
 }
 
 .homeHeader {
