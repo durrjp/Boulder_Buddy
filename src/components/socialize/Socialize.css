@@ -19,7 +19,6 @@
     box-shadow: inset 1px 1px 4px #8a8787 ;
     transform: translateY(2px);
     transform: translateX(2px);
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
     outline: none;
 }
 
@@ -78,7 +77,6 @@
     outline: none;
     transform: translateY(2px);
     transform: translateX(2px);
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
 
 }
 
@@ -155,7 +153,6 @@
     transform: translateY(2px);
     transform: translateX(2px);
     outline: none;
-    background: linear-gradient(156.47deg, #F0ECEC 15.13%,rgb(247, 186, 169) 59.58%);
 
 }
 
