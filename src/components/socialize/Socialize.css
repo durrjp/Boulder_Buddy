@@ -223,7 +223,7 @@
 }
 
 .noStats {
-    background-color: rgba(223, 217, 217, 0.219) !important
+    background: rgba(223, 217, 217, 0.219) !important
 }
 
 .friendStatsModal .modal-content {
