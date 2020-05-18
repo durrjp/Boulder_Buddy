@@ -18,7 +18,6 @@ export default (props) => {
             return true
         }
     })
-    console.log(usersNotFollowing)
 
     useEffect(() => {
         setFiltered(usersNotFollowing)

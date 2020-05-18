@@ -92,12 +92,18 @@
     justify-content: center;
 }
 
+
 .followersContainer {
     height: 280px;
     overflow-y: scroll;
     margin: 1em
-
 }
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 
 .following {
     font-size: 18px;
@@ -123,7 +129,7 @@
     display: flex;
     margin-bottom: 20px;
     justify-content: center;
-    padding: 0px
+    padding: 0px;
 }
 
 .friendName {
@@ -141,7 +147,7 @@
     border:none;
     border-radius: 7px;
     padding:.3em;
-    width: 90px;
+    width: 80px;
     box-shadow: 2px 2px #8a8787;
     font-weight: bold;
     outline: none;
@@ -236,7 +242,7 @@
     border: none;
     border-radius: 7px;
     background: linear-gradient(158.22deg, rgb(240, 176, 172) 0.5%, rgb(169, 21, 11,.5) 30%);
-    width:90px;
+    width:80px;
     box-shadow: 2px 2px #8a8787;
     color:#EDE6E6;
     margin-left: 10px;
