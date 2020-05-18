@@ -1,6 +1,6 @@
 import React, {useContext, useState, useEffect} from "react"
 import { BouldersContext } from "../boulders/BoulderProvider"
-
+import "./NewSessionForm.css"
 
 
 export default ({boulder, toggle}) => {
