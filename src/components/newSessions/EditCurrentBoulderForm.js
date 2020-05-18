@@ -61,7 +61,7 @@ export default ({boulder, toggle}) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="numberOfAttempts">Number of Attempts: </label>
+                    <label htmlFor="numberOfAttempts">Attempts: </label>
                     <input
                         type="number"
                         name="attempts"
