@@ -5,6 +5,7 @@ import { SessionsContext } from "../mySessions/SessionProvider"
 import { BouldersContext } from "../boulders/BoulderProvider"
 import NewBoulderButton from "./NewBoulderButton"
 import "../BoulderBuddy.css"
+import "./Log.css"
 
 
 export default (props) => {
@@ -47,7 +48,7 @@ export default (props) => {
             <div className="instruct newSeshInstruct">New Boulder:</div>
             <form>
                 <div className="sessionRow">
-                    <label htmlFor="numberOfAttempts">Number of Attempts: </label>
+                    <label className="attemptsLabel" htmlFor="numberOfAttempts">Attempts: </label>
                     <input
                         type="number"
                         id="numberOfAttempts"

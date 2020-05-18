@@ -18,14 +18,12 @@ export default (props) => {
             return true
         }
     })
+    console.log(usersNotFollowing)
 
     useEffect(() => {
         setFiltered(usersNotFollowing)
     },[])
 
-    useEffect(() => {
-        setFiltered(usersNotFollowing)
-    },[follows])
 
     // only if search is done, update filtered users
     useEffect(() => {

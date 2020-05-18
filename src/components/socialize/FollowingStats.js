@@ -73,7 +73,7 @@ export default ({user}) => {
                 <Socialize className="friend_Icon"/>
                 <div className="friendName">{user.name}</div>
                 <button className="friendStatsBtn" onClick={toggle}>Stats</button>
-                <button className="dltFriendBtn" onClick={deleteTheFollow}>X</button>
+                <button className="dltFriendBtn" onClick={deleteTheFollow}>Unfollow</button>
                 <Modal className="friendStatsModal" isOpen={modal} >
                     <ModalHeader toggle={toggle}>
                     </ModalHeader>
@@ -92,7 +92,7 @@ export default ({user}) => {
                         </div>
                         <div className="barGraphContainer">
                             <div className="instruct">Total Boulders Climbed</div>
-                            <BarGraph user={user}/>
+                            <BarGraph className="friendBar" user={user}/>
                         </div>
                         <div className="pieChartContainer">
                             <div className="instruct">Flash % by Grade: </div>
@@ -125,7 +125,7 @@ export default ({user}) => {
                 <Socialize className="friend_Icon"/>
                 <div className="friendName">{user.name}</div>
                 <button className="friendStatsBtn noStats" onClick={toggleNoStatsModal}>Stats</button>
-                <button className="dltFriendBtn" onClick={deleteTheFollow}>X</button>
+                <button className="dltFriendBtn" onClick={deleteTheFollow}>Unfollow</button>
                 <Modal isOpen={noStatsModal} >
                     <ModalHeader toggle={toggleNoStatsModal}>
                     </ModalHeader>

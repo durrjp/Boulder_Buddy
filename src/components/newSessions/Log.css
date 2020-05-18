@@ -146,3 +146,7 @@
     transform: translateX(1px);
     outline: none;
 }
+
+.attemptsLabel {
+    width: 160px;
+}

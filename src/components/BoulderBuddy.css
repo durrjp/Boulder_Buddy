@@ -61,4 +61,7 @@ body {
     filter: blur(.5rem);
 }
 
+.darkMode {
+    background-color: rgb(23, 11, 80) !important;
+}
 

@@ -18,7 +18,7 @@ svg {
     width: 414px;
     font-weight: bold;
     color: #6B3411;
-    background: #F49F84;
+    background: #EDE6E6;
 }
 
 .lineDiv {
@@ -39,7 +39,7 @@ svg {
 }
 
 .leftNavItem:hover {
-    background-color: #EDE6E6;
+    background-color:  #FD8D6E;
     text-shadow: none;
 }
 
@@ -64,14 +64,6 @@ svg {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-}
-
-.Home {
-    color:#EDE6E6;
-}
-
-.Home:hover {
-    color:black
 }
 
 .shaded {
