@@ -50,7 +50,7 @@ export default ({boulder, toggle}) => {
                         defaultValue={boulder.grade}
                         onChange={handleControlledInputChange}>
 
-                        <option value="0">Select a grade</option>
+                        <option value="">Select a grade</option>
                         {gradeArray.map(grade => (
                             <option key={grade} value={grade}>
                                 V{grade}
