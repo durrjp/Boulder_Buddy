@@ -83,6 +83,18 @@
     width: 45px
 }
 
+.addBoulderBtn {
+    border: none;
+    background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
+    border-radius: 7px;
+    width: 150px;
+    padding:.1em;
+    box-shadow: 1px 1px #8a8787;
+    font-weight: bold;
+    outline: none;
+    margin-bottom: 10px;
+}
+
 .editButton {
     border: none;
     background: linear-gradient(156.47deg, rgb(251, 237, 225) 0.1%,rgb(231, 206, 186) 65.58%);
