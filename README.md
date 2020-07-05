@@ -4,6 +4,8 @@ Boulder Buddy is a mobile-in-mind, web application designed completely in Figma 
 
 https://boulder-buddy.herokuapp.com/
 
+**Note - database is reset each day. Feel free to re-register if your account login no longer works, or use these test credentials: Email: test@test.com, Password: test
+
 ## Technologies 
 * HTML, CSS, Javascript
 * React:                  Version 16.13.1
