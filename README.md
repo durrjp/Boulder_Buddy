@@ -17,3 +17,14 @@ https://boulder-buddy.herokuapp.com/
 * JSON Server
 * Heroku
 * Figma
+
+## Features
+List of features currently deployed:
+* New Session
+** Create a new bouldering session and log each boulder to the current session
+* Awesome feature 2
+* Awesome feature 3
+
+## To-do list:
+* Wow improvement to be done 1
+* Wow improvement to be done 2
