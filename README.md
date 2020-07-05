@@ -41,3 +41,7 @@ List of features currently deployed:
 ## To-do list:
 * Build out a true back-end using ASP.NET and SQL Server database
 * Build true authentication using (potentially) Firebase
+
+## Contact
+Feel free to add me on LinkedIn https://www.linkedin.com/in/durrjp/
+or reach out with suggestions/questions via email durrjp1@gmail.com
