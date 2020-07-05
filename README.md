@@ -5,7 +5,12 @@ Boulder Buddy is a mobile-in-mind, web application designed completely in Figma 
 https://boulder-buddy.herokuapp.com/
 
 **Note - database is reset each day. Feel free to re-register if your account login no longer works, or use these test credentials: Email: test@test.com, Password: test
-
+## Running the App Locally
+1. Clone the boulder_buddy repo onto your machine
+2. cd into the boulder_buddy directory and run the code below to start the app!
+``` bash 
+npm start
+```
 ## Technologies 
 * HTML, CSS, Javascript
 * React:                  Version 16.13.1
@@ -16,7 +21,7 @@ https://boulder-buddy.herokuapp.com/
 * React-Spring            Version 8.0.27
 * Styled Components       Version 5.1.0
 * Moment                  Version 2.25.3
-* JSON Server
+* JSON Server (for development)
 * Heroku
 * Figma
 
