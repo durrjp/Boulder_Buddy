@@ -20,13 +20,20 @@ https://boulder-buddy.herokuapp.com/
 
 ## Features
 List of features currently deployed:
-* New Session - Create a new bouldering session and log each boulder to the current session
-* My Sessions - View all bouldering sessions logged for your account. CRUD functionality available to:
+* New Session - create a new bouldering session and log each boulder to the current session
+* My Sessions - view all bouldering sessions logged for your account. CRUD functionality available to:
   * Delete entire sessions and associated boulders
   * Add boulders to a session
-  * Edit all boulders associated with a session
+  * Edit boulders associated with a session
   * Delete boulders associated with a session
-* Stats - 
+* Stats - view statistics associated with the current user's bouldering sessions
+  * Bar Graph - displays all boulders attempted vs. all boulders successfully "sent" for each boulder grade
+  * Pie Chart - displays flash percentage ("sending" a boulder the first attempt") vs. completed vs. incompleted for each boulder grade
+* Socialize - interact and follow with other climbers on the app!
+  * Leaderboard - displays top climbers currently on the app based on highest difficulty of boulder "sent" and number of "sends"
+  * Find Climbers - search all climbers currently on the app by name and follow them
+  * Following - displays all climbers you follow. View that climbers' stats or unfollow the climber
+  * Followers - displays all climbers that are following you. You can also block climbers from following you
 
 ## To-do list:
 * Wow improvement to be done 1
