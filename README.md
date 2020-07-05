@@ -29,12 +29,12 @@ List of features currently deployed:
 * Stats - view statistics associated with the current user's bouldering sessions
   * Bar Graph - displays all boulders attempted vs. all boulders successfully "sent" for each boulder grade
   * Pie Chart - displays flash percentage ("sending" a boulder the first attempt") vs. completed vs. incompleted for each boulder grade
-* Socialize - interact and follow with other climbers on the app!
+* Socialize - interact with and follow other climbers on the app!
   * Leaderboard - displays top climbers currently on the app based on highest difficulty of boulder "sent" and number of "sends"
   * Find Climbers - search all climbers currently on the app by name and follow them
   * Following - displays all climbers you follow. View that climbers' stats or unfollow the climber
   * Followers - displays all climbers that are following you. You can also block climbers from following you
 
 ## To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Build out a true back-end using ASP.NET and SQL Server database
+* Build true authentication using (potentially) Firebase
