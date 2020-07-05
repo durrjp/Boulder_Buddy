@@ -34,6 +34,7 @@ List of features currently deployed:
   * Find Climbers - search all climbers currently on the app by name and follow them
   * Following - displays all climbers you follow. View that climbers' stats or unfollow the climber
   * Followers - displays all climbers that are following you. You can also block climbers from following you
+* Help Page - short information page giving some helpful climbing lingo and instruction on how to start your first session
 
 ## To-do list:
 * Build out a true back-end using ASP.NET and SQL Server database
