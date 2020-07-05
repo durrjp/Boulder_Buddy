@@ -24,6 +24,7 @@ npm start
 * JSON Server (for development)
 * Heroku
 * Figma
+* Canva (logo and icons)
 
 ## Features
 List of features currently deployed:
