@@ -4,9 +4,16 @@ Boulder Buddy is a mobile-in-mind, web application designed completely in Figma 
 
 https://boulder-buddy.herokuapp.com/
 
-## Technologies
+## Technologies 
 * HTML, CSS, Javascript
-* React
+* React:                  Version 16.13.1
+* ReactDOM:               Version 16.13.1
+* React-Router-DOM:       Version 5.1.2
+* Reactstrap:             Version 8.4.1
+* React-ChartJS-2:        Version 2.9.0
+* React-Spring            Version 8.0.27
+* Styled Components       Version 5.1.0
+* Moment                  Version 2.25.3
 * JSON Server
-* Chartjs
-*
+* Heroku
+* Figma
