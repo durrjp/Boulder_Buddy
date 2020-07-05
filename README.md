@@ -20,10 +20,13 @@ https://boulder-buddy.herokuapp.com/
 
 ## Features
 List of features currently deployed:
-* New Session
-** Create a new bouldering session and log each boulder to the current session
-* Awesome feature 2
-* Awesome feature 3
+* New Session - Create a new bouldering session and log each boulder to the current session
+* My Sessions - View all bouldering sessions logged for your account. CRUD functionality available to:
+  * Delete entire sessions and associated boulders
+  * Add boulders to a session
+  * Edit all boulders associated with a session
+  * Delete boulders associated with a session
+* Stats - 
 
 ## To-do list:
 * Wow improvement to be done 1
