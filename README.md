@@ -5,6 +5,7 @@ Boulder Buddy is a mobile-in-mind, web application designed completely in Figma 
 https://boulder-buddy.herokuapp.com/
 
 **Note - database is reset each day. Feel free to re-register if your account login no longer works, or use these test credentials: Email: test@test.com, Password: test
+
 ## Running the App Locally
 1. Clone the boulder_buddy repo onto your machine
 2. cd into the boulder_buddy directory and run the code below to start the app!
@@ -47,6 +48,10 @@ List of features currently deployed:
 ## To-do list:
 * Build out a true back-end using ASP.NET and SQL Server database
 * Build true authentication using (potentially) Firebase
+
+## Recognition
+Awarded #1 Project of the Week on Career Karma
+https://careerkarma.com/discussions/projects/boulder-buddy-333/
 
 ## Contact
 Feel free to add me on LinkedIn https://www.linkedin.com/in/durrjp/
