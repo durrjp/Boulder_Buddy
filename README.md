@@ -55,4 +55,3 @@ https://careerkarma.com/discussions/projects/boulder-buddy-333/
 
 ## Contact
 Feel free to add me on LinkedIn https://www.linkedin.com/in/durrjp/
-or reach out with suggestions/questions via email durrjp1@gmail.com
